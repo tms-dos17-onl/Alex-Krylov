@@ -210,7 +210,44 @@ al@al-VirtualBox:~$ sudo usermod -aG HomeWork user_with_group7
 al@al-VirtualBox:~$ id user_with_group7
 ```
 uid=1004(user_with_group7) gid=1005(user_with_group7) groups=1005(user_with_group7),1004(HomeWork)
-al@al-VirtualBox:~$ 
+al@al-VirtualBox:~$
 ```
+4.Выдать права ....
 
+al@al-VirtualBox:/home$ sudo mkdir Class 
+
+al@al-VirtualBox:/home$ ls -l
+```
+total 32
+drwxr-x--- 15 al               al                4096 Jul 19 18:49 al
+drwxr-xr-x  2 root             root              4096 Jul 20 15:44 Class
+-rw-r--r--  1 root             root                 0 Jul 20 11:52 h
+drwx------  2 root             root             16384 Jul 19 18:43 lost+found
+drwxr-x---  2 user_with_group  user_with_group   4096 Jul 20 11:52 user_with_group
+drwxr-x---  2 user_with_group1 user_with_group1  4096 Jul 20 12:39 user_with_group1
+```
+l@al-VirtualBox:/home$ sudo chgrp HomeWork Class
+
+al@al-VirtualBox:/home$ ls -l
+```
+total 32
+drwxr-x--- 15 al               al                4096 Jul 19 18:49 al
+drwxr-xr-x  2 root             HomeWork          4096 Jul 20 15:44 Class
+-rw-r--r--  1 root             root                 0 Jul 20 11:52 h
+drwx------  2 root             root             16384 Jul 19 18:43 lost+found
+drwxr-x---  2 user_with_group  user_with_group   4096 Jul 20 11:52 user_with_group
+drwxr-x---  2 user_with_group1 user_with_group1  4096 Jul 20 12:39 user_with_group1
+```
+al@al-VirtualBox:/home$ sudo chmod 070 Class
+
+al@al-VirtualBox:/home$ ls -l
+```
+total 32
+drwxr-x--- 15 al               al                4096 Jul 19 18:49 al
+d---rwx---  2 root             HomeWork          4096 Jul 20 15:44 Class
+-rw-r--r--  1 root             root                 0 Jul 20 11:52 h
+drwx------  2 root             root             16384 Jul 19 18:43 lost+found
+drwxr-x---  2 user_with_group  user_with_group   4096 Jul 20 11:52 user_with_group
+drwxr-x---  2 user_with_group1 user_with_group1  4096 Jul 20 12:39 user_with_group1
+```
 
