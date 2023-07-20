@@ -250,4 +250,114 @@ drwx------  2 root             root             16384 Jul 19 18:43 lost+found
 drwxr-x---  2 user_with_group  user_with_group   4096 Jul 20 11:52 user_with_group
 drwxr-x---  2 user_with_group1 user_with_group1  4096 Jul 20 12:39 user_with_group1
 ```
+5.Права и Chrony
+al@al-VirtualBox:~$ sudo apt-get install chrony
 
+al@al-VirtualBox:~$ sudo systemctl status chronyd
+
+```
+● chrony.service - chrony, an NTP client/server
+     Loaded: loaded (/lib/systemd/system/chrony.service; enabled; preset: enabl>
+     Active: active (running) since Thu 2023-07-20 17:25:39 +03; 3min 1s ago
+       Docs: man:chronyd(8)
+             man:chronyc(1)
+             man:chrony.conf(5)
+    Process: 4428 ExecStart=/usr/lib/systemd/scripts/chronyd-starter.sh $DAEMON>
+   Main PID: 4449 (chronyd)
+      Tasks: 2 (limit: 4582)
+     Memory: 1.4M
+        CPU: 75ms
+     CGroup: /system.slice/chrony.service
+             ├─4449 /usr/sbin/chronyd -F 1
+             └─4450 /usr/sbin/chronyd -F 1
+
+Jul 20 17:25:39 al-VirtualBox chronyd[4449]: Using right/UTC timezone to obtain>
+Jul 20 17:25:39 al-VirtualBox chronyd[4449]: Loaded seccomp filter (level 1)
+Jul 20 17:25:39 al-VirtualBox systemd[1]: Started chrony.service - chrony, an N>
+Jul 20 17:25:46 al-VirtualBox chronyd[4449]: Selected source 82.209.245.153 (2.>
+Jul 20 17:25:46 al-VirtualBox chronyd[4449]: System clock TAI offset set to 37 >
+Jul 20 17:25:47 al-VirtualBox chronyd[4449]: Selected source 185.125.190.58 (nt>
+Jul 20 17:25:47 al-VirtualBox chronyd[4449]: Source 185.125.190.58 replaced wit>
+Jul 20 17:25:47 al-VirtualBox chronyd[4449]: Selected source 185.125.190.57 (nt>
+lines 1-23
+
+service; enabled; preset: enabled)
+20 17:25:39 +03; 3min 1s ago
+
+ng right/UTC timezone to obtain leap second data
+ded seccomp filter (level 1)
+d chrony.service - chrony, an NTP client/server.
+ected source 82.209.245.153 (2.ubuntu.pool.ntp.org)
+tem clock TAI offset set to 37 seconds
+ected source 185.125.190.58 (ntp.ubuntu.com)
+rce 185.125.190.58 replaced with 91.189.91.157 (ntp.ubuntu.com)
+ected source 185.125.190.57 (ntp.ubuntu.com)
+ected source 91.189.94.4 (ntp.ubuntu.com)
+ected source 178.124.164.106 (1.ubuntu.pool.ntp.org)
+```
+al@al-VirtualBox:~$ sudo nano /etc/sudoers
+
+```
+#
+# This file MUST be edited with the 'visudo' command as root.
+#
+# Please consider adding local content in /etc/sudoers.d/ instead of
+# directly modifying this file.
+#
+# See the man page for details on how to write a sudoers file.
+#
+Defaults	env_reset
+Defaults	mail_badpass
+Defaults	secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin"
+
+# This fixes CVE-2005-4890 and possibly breaks some versions of kdesu
+# (#1011624, https://bugs.kde.org/show_bug.cgi?id=452532)
+Defaults	use_pty
+
+# This preserves proxy settings from user environments of root
+# equivalent users (group sudo)
+#Defaults:%sudo env_keep += "http_proxy https_proxy ftp_proxy all_proxy no_proxy"
+
+# This allows running arbitrary commands, but so does ALL, and it means
+# different sudoers have their choice of editor respected.
+#Defaults:%sudo env_keep += "EDITOR"
+
+# Completely harmless preservation of a user preference.
+#Defaults:%sudo env_keep += "GREP_COLOR"
+
+# While you shouldn't normally run git as root, you need to with etckeeper
+#Defaults:%sudo env_keep += "GIT_AUTHOR_* GIT_COMMITTER_*"
+
+# Per-user preferences; root won't have sensible values for them.
+#Defaults:%sudo env_keep += "EMAIL DEBEMAIL DEBFULLNAME"
+
+# "sudo scp" or "sudo rsync" should be able to use your SSH agent.
+#Defaults:%sudo env_keep += "SSH_AGENT_PID SSH_AUTH_SOCK"
+
+# Ditto for GPG agent
+#Defaults:%sudo env_keep += "GPG_AGENT_INFO"
+
+# Host alias specification
+
+# User alias specification
+
+# Cmnd alias specification
+
+# User privilege specification
+root	ALL=(ALL:ALL) ALL
+
+user_with_group7 ALL=(ALL:ALL) ALL \\\\ Выдаем права пользователю на использование sudo
+
+# Members of the admin group may gain root privileges
+%admin ALL=(ALL) ALL
+
+# Allow members of group sudo to execute any command
+%sudo	ALL=(ALL:ALL) ALL
+
+# See sudoers(5) for more information on "@include" directives:
+
+@includedir /etc/sudoers.d
+```
+al@al-VirtualBox:~$ su - user_with_group7
+
+$ sudo systemctl restart chronyd //// Все работает
