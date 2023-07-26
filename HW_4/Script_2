@@ -1,3 +1,4 @@
+Задание 2
 #!/bin/bash
 sudo useradd -m user_with_group4
 sudo touch user_with_group4 h
