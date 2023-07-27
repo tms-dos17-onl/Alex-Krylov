@@ -66,6 +66,19 @@ al@al-VirtualBox:/etc/systemd/system$ sudo systemctl status Hwork.service
 ```
 Перезагружаем и все работает.
 
+6......
+
+Я может не правильно понял задание.Но вроде, это и есть логи моего сервиса.
+
+al@al-VirtualBox:~$ cat /var/log/syslog |grep Hwork
+
+```
+2023-07-27T18:04:05.544962+03:00 al-VirtualBox systemd[1]: Started Hwork.service - HWORK.
+2023-07-27T18:04:05.568001+03:00 al-VirtualBox systemd[1]: Hwork.service: Deactivated successfully.
+2023-07-27T18:20:03.548719+03:00 al-VirtualBox systemd[1]: Started Hwork.service - HWORK.
+2023-07-27T18:20:03.548832+03:00 al-VirtualBox systemd[1]: Hwork.service: Deactivated successfully.
+```
+
 
 
 
