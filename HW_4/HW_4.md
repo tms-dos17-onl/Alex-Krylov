@@ -33,9 +33,38 @@ al@al-VirtualBox:~/script$ jobs
 ```
 [1]+  Terminated              ~/script/script_4.sh
 ```
+5......
+al@al-VirtualBox:~/script$ sudo nano /etc/sustemd/system/HWork.service
 
+```
+[Unit]
+Description=HWORK
 
+[Service]
+ExecStart=/home/al/script/script_4.sh
 
+[Install]
+WantedBy=default.target
+```
+al@al-VirtualBox:/etc/systemd/system$ sudo systemctl start Hwork.service
+al@al-VirtualBox:/etc/systemd/system$ sudo systemctl status Hwork.service
+```
+○ Hwork.service - HWORK
+     Loaded: loaded (/etc/systemd/system/Hwork.service; disabled; preset: enabled)
+     Active: inactive (dead)
+```
+al@al-VirtualBox:/etc/systemd/system$ sudo systemctl enable Hwork.service
+```
+Created symlink /etc/systemd/system/default.target.wants/Hwork.service → /etc/systemd/system/Hwork.service.
+```
+al@al-VirtualBox:/etc/systemd/system$ sudo systemctl status Hwork.service
+```
+○ Hwork.service - HWORK
+     Loaded: loaded (/etc/systemd/system/Hwork.service; enabled; preset: enabled)
+     Active: inactive (dead)
+
+```
+Перезагружаем и все работает.
 
 
 
