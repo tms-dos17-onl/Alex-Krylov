@@ -9,6 +9,7 @@ al@al-VirtualBox:~/script$ ps
 al@al-VirtualBox:~/script$ touch script_4.sh /// Создаем файл
 
 al@al-VirtualBox:~/script$ chmod +x script_4.sh////Даем исполнение.Далее пишел скрипт
+
 Содержание скрипта:
 ```
 #!/bin/bash
@@ -22,13 +23,16 @@ Work
 al@al-VirtualBox:~/script$ ~/script/script_4.sh &
 [1] 2775
 3....
+
 Убедиться легко,ведь файл постоянно растет в азмере или через Cat
+
 4......
 al@al-VirtualBox:~/script$ jobs
 ```
 [1]+  Running                 ~/script/script_4.sh &
 ```
 al@al-VirtualBox:~/script$ kill %1
+
 al@al-VirtualBox:~/script$ jobs
 ```
 [1]+  Terminated              ~/script/script_4.sh
@@ -47,6 +51,7 @@ ExecStart=/home/al/script/script_4.sh
 WantedBy=default.target
 ```
 al@al-VirtualBox:/etc/systemd/system$ sudo systemctl start Hwork.service
+
 al@al-VirtualBox:/etc/systemd/system$ sudo systemctl status Hwork.service
 ```
 ○ Hwork.service - HWORK
