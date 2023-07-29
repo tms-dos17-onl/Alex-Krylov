@@ -10,35 +10,26 @@ al@al-VirtualBox:~/script$ touch script_4.sh /// Создаем файл
 
 al@al-VirtualBox:~/script$ chmod +x script_4.sh////Даем исполнение.Далее пишел скрипт
 
-Содержание скрипта:
-```
-#!/bin/bash
-Work(){
-echo 11111 >> /home/g
-sleep 2                       \\\\\\
-  Work
-}
-Work
-```
-al@al-VirtualBox:~/script$ ~/script/script_4.sh &
+
+al@al-VirtualBox:~/script/script_4.sh & ////Запускаем скрипт в фоновом режиме
 [1] 2775
 3....
 
 Убедиться легко,ведь файл постоянно растет в азмере или через Cat
 
 4......
-al@al-VirtualBox:~/script$ jobs
+al@al-VirtualBox:~/script$ jobs ////Проверяем
 ```
 [1]+  Running                 ~/script/script_4.sh &
 ```
-al@al-VirtualBox:~/script$ kill %1
+al@al-VirtualBox:~/script$ kill %1 /////Прекращаю работу
 
 al@al-VirtualBox:~/script$ jobs
 ```
 [1]+  Terminated              ~/script/script_4.sh
 ```
 5......
-al@al-VirtualBox:~/script$ sudo nano /etc/sustemd/system/HWork.service
+al@al-VirtualBox:~/script$ sudo nano /etc/sustemd/system/HWork.service /////Добавляю автозагрузку
 
 ```
 [Unit]
