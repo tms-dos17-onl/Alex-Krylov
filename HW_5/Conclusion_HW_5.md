@@ -41,8 +41,25 @@ tcp      ESTAB      0          0              [::ffff:172.17.247.38]:22         
                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
                          Вот мое соединение между Виртуалками
 ```
+3------
 
 [al99999@localhost ~]$ sudo iptables -P INPUT DROP
+
+[al99999@localhost ~]$ sudo iptables -L
+```
+Chain INPUT (policy DROP)
+target     prot opt source               destination         
+ACCEPT     all  --  anywhere             anywhere             ctstate RELATED,ESTABLISHED
+
+Chain FORWARD (policy ACCEPT)
+target     prot opt source               destination         
+
+Chain OUTPUT (policy ACCEPT)
+target     prot opt source               destination     
+```
+
+[al99999@localhost ~]$ sudo iptables -P INPUT DROP
+```
 [al99999@localhost ~]$ sudo iptables -L
 Chain INPUT (policy DROP)
 target     prot opt source               destination         
@@ -54,18 +71,4 @@ target     prot opt source               destination
 
 Chain OUTPUT (policy ACCEPT)
 target     prot opt source               destination     
-
-
-[al99999@localhost ~]$ sudo iptables -P INPUT DROP
-[al99999@localhost ~]$ sudo iptables -L
-Chain INPUT (policy DROP)
-target     prot opt source               destination         
-ACCEPT     all  --  anywhere             anywhere             ctstate RELATED,ESTABLISHED
-ACCEPT     tcp  --  anywhere             anywhere             tcp dpt:ssh
-
-Chain FORWARD (policy ACCEPT)
-target     prot opt source               destination         
-
-Chain OUTPUT (policy ACCEPT)
-target     prot opt source               destination     
-
+```
