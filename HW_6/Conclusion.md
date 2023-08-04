@@ -14,4 +14,5 @@ al@al-VirtualBox:~$ ip a
        valid_lft 86313sec preferred_lft 86313sec
     inet6 fe80::ba17:35ab:636:8e5c/64 scope link noprefixroute 
        valid_lft forever preferred_lft forever
+
 ```
