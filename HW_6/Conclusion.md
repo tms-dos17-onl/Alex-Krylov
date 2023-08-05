@@ -29,7 +29,13 @@ IP адресс первого хоста 192.28.208.1
 IP адресс last 192.28.223.254 
 
 2. Определить публичный IP адрес хоста и Linux VM? Чем они отличаются?
-37.215.26.45al@al-VirtualBox:~$ curl -v -L ifconfig.me
+
+Мне кажется я не доконца понял все, если что поправте.Я использую Curl как веб  браузер на серверной версии,перехожу на сайт который определяет мой публичный IP.
+
+И с хоста и с VM, IP один, так как виртуалка создает локальный IP на базе моего который создан nat у моего провайдера, поэтомы все они используют его публичный IP для выхода в инет.
+
+al@al-VirtualBox:~$ curl -v -L ifconfig.me
+```
 *   Trying 34.160.111.145:80...
 * Connected to ifconfig.me (34.160.111.145) port 80 (#0)
 > GET / HTTP/1.1
@@ -46,8 +52,10 @@ IP адресс last 192.28.223.254
 < strict-transport-security: max-age=2592000; includeSubDomains
 < server: istio-envoy
 < Via: 1.1 google
-< 
 * Connection #0 to host ifconfig.me left intact
-37.215.26.45al@al-VirtualBox:~$ 
+37.215.26.45
+```
+C:\Users\kullb>curl ifconfig.me
+37.215.26.45
 
 
