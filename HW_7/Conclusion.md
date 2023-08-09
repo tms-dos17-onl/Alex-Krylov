@@ -152,6 +152,8 @@ Switched to branch 'main'
 ````
 11. Скопировать файл https://github.com/tms-dos17-onl/_sandbox/blob/main/.github/workflows/validate-shell.yaml, положить его по такому же относительному пути в репозиторий. Создать коммит и запушить его в удаленный репозиторий.
 
+git add 
+
 git pull
 ````
 remote: Enumerating objects: 5, done.
