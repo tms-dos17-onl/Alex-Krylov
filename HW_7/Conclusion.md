@@ -181,5 +181,29 @@ To https://github.com/tms-dos17-onl/Alex-Krylov.git
 
 ````
 
+12. Создать из ветки main ветку develop. Переключиться на неё и создать README.md в корне репозитория. Написать в этом файле какие инструменты DevOps вам знакомы и с какими вы бы хотели познакомиться больше всего (2-3 пункта).
+
+
+ git branch develop
+ 
+PS D:\G\!\Tа\DeVopS\Git\Alex-Krylov> git checkout develop  
+````
+Switched to branch 'develop'
+````
+
+PS D:\G\!\Tа\DeVopS\Git\Alex-Krylov> New-Item Readme.md
+````
+----                 -------------         ------ ----
+-a----        09.08.2023     21:23              0 Readme.md
+````
+
+PS D:\G\!\Tа\DeVopS\Git\Alex-Krylov> git add Readme.md   
+
+PS D:\G\!\Tа\DeVopS\Git\Alex-Krylov> git commit
+````
+[develop 122bb67] 2
+ 1 file changed, 1 insertion(+)
+ ````
+
 
 
