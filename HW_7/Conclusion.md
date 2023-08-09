@@ -150,10 +150,34 @@ git checkout main
 ````                                           
 Switched to branch 'main'
 ````
+11. Скопировать файл https://github.com/tms-dos17-onl/_sandbox/blob/main/.github/workflows/validate-shell.yaml, положить его по такому же относительному пути в репозиторий. Создать коммит и запушить его в удаленный репозиторий.
 
+git pull
+````
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (3/3), done.
+Unpacking objects: 100% (4/4), 2.24 KiB | 15.00 KiB/s, done.
+From https://github.com/tms-dos17-onl/Alex-Krylov
+   bbf45ad..00cd484  main       -> origin/main
+Merge made by the 'ort' strategy.
+ HW_7/Conclusion.md | 159 +++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 159 insertions(+)
+ create mode 100644 HW_7/Conclusion.md
+````
+PS D:\G\!\Tа\DeVopS\Git\Alex-Krylov> git push --all
+````
+Enumerating objects: 21, done.
+Counting objects: 100% (21/21), done.
+Delta compression using up to 6 threads
+Compressing objects: 100% (11/11), done.
+Writing objects: 100% (19/19), 1.57 KiB | 805.00 KiB/s, done.
+Total 19 (delta 4), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (4/4), completed with 1 local object.
+To https://github.com/tms-dos17-onl/Alex-Krylov.git
+   00cd484..f03dc5c  main -> main
 
-
-
+````
 
 
 
