@@ -205,5 +205,106 @@ PS D:\G\!\Tа\DeVopS\Git\Alex-Krylov> git commit
  1 file changed, 1 insertion(+)
  ````
 
+13. Создать из ветки main ветку support и создать там файл LICENSE в корне репозитория с содержимым https://www.apache.org/licenses/LICENSE-2.0.txt. Создать коммит. Вывести последние 3 коммитa.
 
 
+PS D:\G\!\Tа\DeVopS\Git\Alex-Krylov> git checkout support
+
+````
+Switched to branch 'support'
+````
+PS D:\G\!\Tа\DeVopS\Git\Alex-Krylov> New-Item LICENSE    
+
+````
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----        09.08.2023     21:43              0 LICENSE
+````
+
+PS D:\G\!\Tа\DeVopS\Git\Alex-Krylov> git add LICENSE   
+
+PS D:\G\!\Tа\DeVopS\Git\Alex-Krylov> git cimmit     
+````
+The most similar command is
+ 1 file changed, 201 insertions(+)
+ create mode 100644 LICENSE
+ ````
+
+PS D:\G\!\Tа\DeVopS\Git\Alex-Krylov> git log 
+````
+commit 1c456b2f21da756d13504e1d80cab0d5f822e03a (HEAD -> support)
+Author: alex krylov <kullbro@gmail.com>
+Date:   Wed Aug 9 21:44:33 2023 +0300
+
+    Work
+
+commit 122bb674deaa37a2edb4ac78d57b60917c254272 (develop)
+Author: alex krylov <kullbro@gmail.com>
+Date:   Wed Aug 9 21:25:54 2023 +0300
+
+    2
+
+commit 842218f51022d106df263273dde1f841306f4397
+Author: alex krylov <kullbro@gmail.com>
+Date:   Wed Aug 9 21:23:41 2023 +0300
+
+    1
+
+````
+14. Переключиться обратно на ветку main и создать там файл LICENSE в корне репозитория с содержимым https://github.com/git/git-scm.com/blob/main/MIT-LICENSE.txt. Создать коммит. Вывести последние 3 коммитa.
+
+
+PS D:\G\!\Tа\DeVopS\Git\Alex-Krylov> git checkout main 
+````
+Switched to branch 'main'
+D       .githab/workflows/validate-shell.yaml
+Your branch is up to date with 'origin/main'.
+````
+PS D:\G\!\Tа\DeVopS\Git\Alex-Krylov> New-Item LICENSE    
+
+````
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+````
+
+PS D:\G\!\Tа\DeVopS\Git\Alex-Krylov> git add LICENSE   
+
+PS D:\G\!\Tа\DeVopS\Git\Alex-Krylov> git commit
+````
+[main 580c418] 1
+ 1 file changed, 20 insertions(+)
+ create mode 100644 LICENSE
+ ````
+PS D:\G\!\Tа\DeVopS\Git\Alex-Krylov> git log
+````
+commit 580c41828035eac569f9bdcb08ccca65c2559ca7 (HEAD -> main)
+Author: alex krylov <kullbro@gmail.com>
+Date:   Wed Aug 9 21:50:07 2023 +0300
+
+    1
+
+commit ecb2cfbb7e10181b6d597b34f07f8cd3afda034a (origin/main, origin/HEAD)
+Author: Alex777888777 <139115675+Alex777888777@users.noreply.github.com>
+Date:   Wed Aug 9 21:13:12 2023 +0300
+
+    Update Conclusion.md
+
+commit 22119687b940e3324a03a300f42ac518d9b90647
+Author: Alex777888777 <139115675+Alex777888777@users.noreply.github.com>
+Date:   Wed Aug 9 20:25:34 2023 +0300
+
+    Delete test directory
+
+````
+15. Сделать merge ветки support в ветку main и решить конфликты путем выбора содержимого только одной лицензии.
+
+PS D:\G\!\Tа\DeVopS\Git\Alex-Krylov> git merge support
+````
+Auto-merging LICENSE
+CONFLICT (add/add): Merge conflict in LICENSE
+Automatic merge failed; fix conflicts and then commit the result.
+PS D:\G\!\Tа\DeVopS\Git\Alex-Krylov> git add LICENSE 
+````
+PS D:\G\!\Tа\DeVopS\Git\Alex-Krylov> git commit        
