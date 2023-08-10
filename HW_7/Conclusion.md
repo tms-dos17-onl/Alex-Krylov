@@ -1,5 +1,12 @@
 1. Вывести список всех удаленных репозиториев для локального.
-2. Вывести список всех веток.
+
+ PS D:\G\!\Tа\DeVopS\Git\Alex-Krylov> git remote -v
+ ````
+origin  https://github.com/tms-dos17-onl/Alex-Krylov.git (fetch)
+origin  https://github.com/tms-dos17-onl/Alex-Krylov.git (push)
+
+````
+3. Вывести список всех веток.
  git branch
 ```
 PS D:\G\!\Tа\DeVopS\Git\Alex-Krylov\test_1> 
@@ -308,3 +315,87 @@ Automatic merge failed; fix conflicts and then commit the result.
 PS D:\G\!\Tа\DeVopS\Git\Alex-Krylov> git add LICENSE 
 ````
 PS D:\G\!\Tа\DeVopS\Git\Alex-Krylov> git commit        
+
+16. Переключиться на ветку develop и сделать rebase относительно ветки main.
+PS D:\G\!\Tа\DeVopS\Git\Alex-Krylov> git rebase main     
+````
+Successfully rebased and updated refs/heads/develop.
+````
+17. Вывести историю последних 10 коммитов в виде графа с помощью команды git log -10 --oneline --graph.
+
+PS D:\G\!\Tа\DeVopS\Git\Alex-Krylov> git log -10 --oneline --graph
+````
+* 75018e4 (HEAD -> develop, main) Revert "1"
+*   65ddac5 Merge branch 'support'
+|\
+| * 1c456b2 (support) Work
+| * 122bb67 2
+* | 580c418 1
+|/
+* ecb2cfb (origin/main, origin/HEAD) Update Conclusion.md
+* c7ed1a4 Delete test_work directory
+*   f03dc5c Merge branch 'main' of https://github.com/tms-dos17-onl/Alex-Krylov
+|\
+````
+18. Запушить ветку develop. В истории коммитов должен быть мерж support -> main.
+
+PS D:\G\!\Tа\DeVopS\Git\Alex-Krylov> git pull
+````
+remote: Enumerating objects: 26, done.
+remote: Counting objects: 100% (26/26), done.
+remote: Compressing objects: 100% (21/21), done.
+remote: Total 23 (delta 10), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (23/23), 6.28 KiB | 7.00 KiB/s, done.
+From https://github.com/tms-dos17-onl/Alex-Krylov
+   ecb2cfb..ed73152  main       -> origin/main
+There is no tracking information for the current branch.
+Please specify which branch you want to merge with.
+
+    git pull <remote> <branch>
+
+If you wish to set tracking information for this branch you can do so with:
+
+    git branch --set-upstream-to=origin/<branch> develop
+````
+PS D:\G\!\Tа\DeVopS\Git\Alex-Krylov> git push --set-upstream origin develop
+````
+Enumerating objects: 18, done.
+Counting objects: 100% (18/18), done.
+Delta compression using up to 6 threads
+Compressing objects: 100% (16/16), done.
+Writing objects: 100% (17/17), 5.81 KiB | 1.45 MiB/s, done.
+Total 17 (delta 8), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'develop' on GitHub by visiting:
+remote:      https://github.com/tms-dos17-onl/Alex-Krylov/pull/new/develop
+To https://github.com/tms-dos17-onl/Alex-Krylov.git
+ * [new branch]      develop -> develop
+branch 'develop' set up to track 'origin/develop'.
+````
+
+PS D:\G\!\Tа\DeVopS\Git\Alex-Krylov> git log -10 --oneline --graph
+````
+* 75018e4 (HEAD -> develop, origin/develop) Revert "1"
+*   65ddac5 Merge branch 'support'
+|\
+| * 1c456b2 (support) Work
+| * 122bb67 2
+* 75018e4 (HEAD -> develop, origin/develop) Revert "1"
+*   65ddac5 Merge branch 'support'
+|\
+| * 1c456b2 (support) Work
+| * 122bb67 2
+| * 842218f 1
+* | 580c418 1
+|/
+* ecb2cfb Update Conclusion.md
+* 2211968 Delete test directory
+* c7ed1a4 Delete test_work directory
+*   f03dc5c Merge branch 'main' of https://github.com/tms-dos17-onl/Alex-Krylov
+|\
+(END)
+````
+19. Зайти в свой репозиторий на GitHub и создать Pull Request из ветки develop в ветку main.
+
+
+Готово
