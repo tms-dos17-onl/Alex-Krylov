@@ -91,6 +91,108 @@ al@al-VirtualBox:~$ cat /etc/passwd|grep -e'alice' -e'bob'
 alice:x:1001:1001::/home/alice:/bin/bash
 bob:x:1002:1002::/home/bob:/bin/bash
 ````
+6
+
+al@al-VirtualBox:~$ sudo su alice
+
+alice@al-VirtualBox:/home/al$ cd ~
+
+alice@al-VirtualBox:~$ 
+
+alice@al-VirtualBox:~$ nano secret.txt
+
+7
+alice@al-VirtualBox:~$ ls -l
+````
+total 4
+-rw-r--r-- 1 alice alice 0 Jul 20 12:38 h
+-rw-r--r-- 1 alice alice 7 Aug 10 17:39 secret.txt
+````
+8
+alice@al-VirtualBox:~$ exit
+````
+exit
+````
+al@al-VirtualBox:~$ sudo su bob
+
+bob@al-VirtualBox:/home/al$ cd ~
+
+bob@al-VirtualBox:~$ cat /home/alice/secre.txt
+
+cat: /home/alice/secre.txt: Permission denied
+
+Пользователи bob и alica  находятся в разный группах и не имеют прав делать что либо с файлами из корневых каталогах друк друга.
+
+9
+
+bob@al-VirtualBox:/home/al$ cd /tmp
+
+bob@al-VirtualBox:/tmp$ nano secret.txt
+
+10
+
+bob@al-VirtualBox:/tmp$ ls -l
+````
+total 52
+srw-rw-rw- 1 root  root     0 Aug 10 16:00 dbus-naw6piVL
+srw-rw-rw- 1 root  root     0 Aug 10 16:00 dbus-TWbFxc53
+-rw-rw-r-- 1 bob bob    6 Aug 10 18:26 secret.txt
+drwx------ 4 root  root  4096 Aug 10 16:06 snap-private-tmp
+drwx------ 3 root  root  4096 Aug 10 16:00 systemd-private-8b4b7a2e70f34a56a539ace42f5c6018-chrony.service-UgNc5N
+drwx------ 3 root  root  4096 Aug 10 16:01 systemd-private-8b4b7a2e70f34a56a539ace42f5c6018-colord.service-BdEyUU
+drwx------ 3 root  root  4096 Aug 10 16:00 systemd-private-8b4b7a2e70f34a56a539ace42f5c6018-ModemManager.service-9I5x5n
+drwx------ 3 root  root  4096 Aug 10 16:00 systemd-private-8b4b7a2e70f34a56a539ace42f5c6018-power-profiles-daemon.service-o10igb
+drwx------ 3 root  root  4096 Aug 10 16:00 systemd-private-8b4b7a2e70f34a56a539ace42f5c6018-switcheroo-control.service-bRQR3s
+drwx------ 3 root  root  4096 Aug 10 16:00 systemd-private-8b4b7a2e70f34a56a539ace42f5c6018-systemd-logind.service-s9yUbv
+drwx------ 3 root  root  4096 Aug 10 16:00 systemd-private-8b4b7a2e70f34a56a539ace42f5c6018-systemd-oomd.service-GC7wxE
+drwx------ 3 root  root  4096 Aug 10 16:00 systemd-private-8b4b7a2e70f34a56a539ace42f5c6018-systemd-resolved.service-QiGWsv
+drwx------ 3 root  root  4096 Aug 10 16:01 systemd-private-8b4b7a2e70f34a56a539ace42f5c6018-upower.service-YjAdNx
+drwx------ 2 al    al    4096 Aug 10 18:07 tracker-extract-3-files.1000
+drwxrwxr-x 2 al    al    4096 Aug 10 16:02 ubuntu-advantage
+````
+bob@al-VirtualBox:/tmp$ chmod 640 secret.txt 
+
+bob@al-VirtualBox:/tmp$ ls -l
+````
+total 52
+srw-rw-rw- 1 root  root     0 Aug 10 16:00 dbus-naw6piVL
+srw-rw-rw- 1 root  root     0 Aug 10 16:00 dbus-TWbFxc53
+-rw-r----- 1 bob bob    6 Aug 10 18:26 secret.txt
+drwx------ 4 root  root  4096 Aug 10 16:06 snap-private-tmp
+drwx------ 3 root  root  4096 Aug 10 16:00 systemd-private-8b4b7a2e70f34a56a539ace42f5c6018-chrony.service-UgNc5N
+drwx------ 3 root  root  4096 Aug 10 16:01 systemd-private-8b4b7a2e70f34a56a539ace42f5c6018-colord.service-BdEyUU
+drwx------ 3 root  root  4096 Aug 10 16:00 systemd-private-8b4b7a2e70f34a56a539ace42f5c6018-ModemManager.service-9I5x5n
+drwx------ 3 root  root  4096 Aug 10 16:00 systemd-private-8b4b7a2e70f34a56a539ace42f5c6018-power-profiles-daemon.service-o10igb
+drwx------ 3 root  root  4096 Aug 10 16:00 systemd-private-8b4b7a2e70f34a56a539ace42f5c6018-switcheroo-control.service-bRQR3s
+drwx------ 3 root  root  4096 Aug 10 16:00 systemd-private-8b4b7a2e70f34a56a539ace42f5c6018-systemd-logind.service-s9yUbv
+drwx------ 3 root  root  4096 Aug 10 16:00 systemd-private-8b4b7a2e70f34a56a539ace42f5c6018-systemd-oomd.service-GC7wxE
+drwx------ 3 root  root  4096 Aug 10 16:00 systemd-private-8b4b7a2e70f34a56a539ace42f5c6018-systemd-resolved.service-QiGWsv
+drwx------ 3 root  root  4096 Aug 10 16:01 systemd-private-8b4b7a2e70f34a56a539ace42f5c6018-upower.service-YjAdNx
+drwx------ 2 al    al    4096 Aug 10 18:07 tracker-extract-3-files.1000
+drwxrwxr-x 2 al    al    4096 Aug 10 16:02 ubuntu-advantage
+````
+alice@al-VirtualBox:/tmp$ ls -l|grep secret
+````
+-rw-r----- 1 bob bob    6 Aug 10 18:26 secret.txt
+
+````
+
+11
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
