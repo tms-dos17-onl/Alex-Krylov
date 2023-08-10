@@ -317,6 +317,7 @@ Successfully rebased and updated refs/heads/develop.
 17. Вывести историю последних 10 коммитов в виде графа с помощью команды git log -10 --oneline --graph.
 
 PS D:\G\!\Tа\DeVopS\Git\Alex-Krylov> git log -10 --oneline --graph
+````
 * 75018e4 (HEAD -> develop, main) Revert "1"
 *   65ddac5 Merge branch 'support'
 |\
@@ -328,7 +329,7 @@ PS D:\G\!\Tа\DeVopS\Git\Alex-Krylov> git log -10 --oneline --graph
 * c7ed1a4 Delete test_work directory
 *   f03dc5c Merge branch 'main' of https://github.com/tms-dos17-onl/Alex-Krylov
 |\
-
+````
 18. Запушить ветку develop. В истории коммитов должен быть мерж support -> main.
 
 PS D:\G\!\Tа\DeVopS\Git\Alex-Krylov> git pull
@@ -366,6 +367,7 @@ branch 'develop' set up to track 'origin/develop'.
 ````
 
 PS D:\G\!\Tа\DeVopS\Git\Alex-Krylov> git log -10 --oneline --graph
+````
 * 75018e4 (HEAD -> develop, origin/develop) Revert "1"
 *   65ddac5 Merge branch 'support'
 |\
@@ -385,5 +387,5 @@ PS D:\G\!\Tа\DeVopS\Git\Alex-Krylov> git log -10 --oneline --graph
 *   f03dc5c Merge branch 'main' of https://github.com/tms-dos17-onl/Alex-Krylov
 |\
 (END)
-
+````
 19. Зайти в свой репозиторий на GitHub и создать Pull Request из ветки develop в ветку main.
