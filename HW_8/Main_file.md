@@ -67,4 +67,35 @@ al:x:1000:1000:Al77:/home/al:/bin/bash <<< Домашняя директория
 ````
 3
 
+al@al-VirtualBox:~$ touch get-date.sh
+
+al@al-VirtualBox:~$ chmod +x get-date.sh
+
+al@al-VirtualBox:~$ sudo nano get-date.sh
+
+al@al-VirtualBox:~$ ./get-date.sh 
+````
+Thu Aug 10 04:05:30 PM +03 2023
+````
+4
+Оба варианта работают так как в сктипре указан какой интерпретатор сипользовать "#!/bin/bash"
+
+5
+
+al@al-VirtualBox:~$ sudo useradd -d /home/alice -m -s /bin/bash alice
+
+al@al-VirtualBox:~$ sudo useradd -d /home/bob -m -s /bin/bash bob
+
+al@al-VirtualBox:~$ cat /etc/passwd|grep -e'alice' -e'bob'
+````
+alice:x:1001:1001::/home/alice:/bin/bash
+bob:x:1002:1002::/home/bob:/bin/bash
+````
+
+
+
+
+
+
+
 
