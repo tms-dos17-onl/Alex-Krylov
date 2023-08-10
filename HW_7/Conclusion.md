@@ -1,5 +1,12 @@
 1. Вывести список всех удаленных репозиториев для локального.
-2. Вывести список всех веток.
+
+ PS D:\G\!\Tа\DeVopS\Git\Alex-Krylov> git remote -v
+ ````
+origin  https://github.com/tms-dos17-onl/Alex-Krylov.git (fetch)
+origin  https://github.com/tms-dos17-onl/Alex-Krylov.git (push)
+
+````
+3. Вывести список всех веток.
  git branch
 ```
 PS D:\G\!\Tа\DeVopS\Git\Alex-Krylov\test_1> 
@@ -389,3 +396,4 @@ PS D:\G\!\Tа\DeVopS\Git\Alex-Krylov> git log -10 --oneline --graph
 (END)
 ````
 19. Зайти в свой репозиторий на GitHub и создать Pull Request из ветки develop в ветку main.
+Готово
