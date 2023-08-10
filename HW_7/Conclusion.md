@@ -396,4 +396,6 @@ PS D:\G\!\Tа\DeVopS\Git\Alex-Krylov> git log -10 --oneline --graph
 (END)
 ````
 19. Зайти в свой репозиторий на GitHub и создать Pull Request из ветки develop в ветку main.
+
+
 Готово
