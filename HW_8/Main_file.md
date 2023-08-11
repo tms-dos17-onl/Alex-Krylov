@@ -218,8 +218,6 @@ drwxr-x--- 3 alice alice 4096 Aug 10 18:22 alice
 
 15
 
-
-
 al@al-VirtualBox:~$ sudo rsync -a /home/al/script al99999@172.21.78.202:~/script
 
 
