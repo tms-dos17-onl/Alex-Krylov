@@ -179,12 +179,43 @@ alice@al-VirtualBox:/tmp$ ls -l|grep secret
 
 11
 
+alice@al-VirtualBox:/home/al$ cat /tmp/secret.txt 
+````
+cat: /tmp/secret.txt: Permission denied
+````
+alice@al-VirtualBox:/home/al$ ls -l /tmp|grep secret
+````
+-rw-r----- 1 bob  bob     6 Aug 11 11:12 secret.txt
+````
+Это связанно с тем ,что файл могут читать только владелец и группа ,а значить Bob  
+
+12
+
+al@al-VirtualBox:~$ sudo usermod -a -G bob alice
 
 
+al@al-VirtualBox:~$ id alice
+````
+uid=1001(alice) gid=1001(alice) groups=1001(alice),1002(bob)
+````
+al@al-VirtualBox:~$ sudo su alice
 
+13
 
+alice@al-VirtualBox:/home/al$ cat /tmp/secret.txt 
+````
+hello
 
+````
+14
 
+al@al-VirtualBox:/home$ sudo rsync -a alice/ /tmp/alice
+
+al@al-VirtualBox:/home$ ls -l /tmp |grep alice
+````
+drwxr-x--- 3 alice alice 4096 Aug 10 18:22 alice
+````
+15
 
 
 
