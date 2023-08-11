@@ -222,6 +222,17 @@ al@al-VirtualBox:~$ sudo rsync -a /home/al/script al99999@172.21.78.202:~/script
 
 
 
+16
+
+al@al-VirtualBox:~$ userdel -r alice
+
+al@al-VirtualBox:~$ sudo userdel -r bob
+````
+userdel: bob mail spool (/var/mail/bob) not found
+````
+17
+
+
 
 
 
