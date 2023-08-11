@@ -59,13 +59,14 @@ user_with_group9:x:1006:1007::/home/user_with_group9:/bin/sh
 user_with_group4:x:1007:1008::/home/user_with_group4:/bin/sh
 sshd:x:125:65534::/run/sshd:/usr/sbin/nologin
 ````
-2
+2. Найти и вывести в консоль домашние каталоги для текущего пользователя и root.
+
 al@al-VirtualBox:~$ sudo cat /etc/passwd |grep -e 'al:x' -e 'root:x'
 ````
 root:x:0:0:root:/root:/bin/bash <<<<  /root
 al:x:1000:1000:Al77:/home/al:/bin/bash <<< Домашняя директория /home/al
 ````
-3
+3. Создать Bash скрипт get-date.sh, выводящий текущую дату.
 
 al@al-VirtualBox:~$ touch get-date.sh
 
@@ -77,10 +78,11 @@ al@al-VirtualBox:~$ ./get-date.sh
 ````
 Thu Aug 10 04:05:30 PM +03 2023
 ````
-4
+4. Запустить скрипт через ./get-date.sh и bash get-date.sh. Какой вариант не работает? Сделать так, чтобы оба варианта работали.
+
 Оба варианта работают так как в сктипре указан какой интерпретатор сипользовать "#!/bin/bash"
 
-5
+5. Создать пользователей alice и bob с домашними директориями и установить /bin/bash в качестве командной оболочки по умолчанию.
 
 al@al-VirtualBox:~$ sudo useradd -d /home/alice -m -s /bin/bash alice
 
@@ -91,7 +93,7 @@ al@al-VirtualBox:~$ cat /etc/passwd|grep -e'alice' -e'bob'
 alice:x:1001:1001::/home/alice:/bin/bash
 bob:x:1002:1002::/home/bob:/bin/bash
 ````
-6
+6. Запустить интерактивную сессию от пользователя alice. Создать файл secret.txt с каким-нибудь секретом в домашней директории при помощи текстового редактора nano.
 
 al@al-VirtualBox:~$ sudo su alice
 
@@ -101,14 +103,16 @@ alice@al-VirtualBox:~$
 
 alice@al-VirtualBox:~$ nano secret.txt
 
-7
+7. Вывести права доступа к файлу secret.txt.
+
 alice@al-VirtualBox:~$ ls -l
 ````
 total 4
 -rw-r--r-- 1 alice alice 0 Jul 20 12:38 h
 -rw-r--r-- 1 alice alice 7 Aug 10 17:39 secret.txt
 ````
-8
+8. Выйти из сессии от alice и открыть сессию от bob. Вывести содержимое файла /home/alice/secret.txt созданного ранее не прибегая к команде sudo. В случае, если это не работает, объяснить.
+
 alice@al-VirtualBox:~$ exit
 ````
 exit
@@ -123,13 +127,13 @@ cat: /home/alice/secre.txt: Permission denied
 
 Пользователи bob и alica  находятся в разный группах и не имеют прав делать что либо с файлами из корневых каталогах друк друга.
 
-9
+9. Создать файл secret.txt с каким-нибудь секретом в каталоге /tmp при помощи текстового редактора nano.
 
 bob@al-VirtualBox:/home/al$ cd /tmp
 
 bob@al-VirtualBox:/tmp$ nano secret.txt
 
-10
+10. Вывести права доступа к файлу secret.txt. Поменять права таким образом, чтобы этот файл могли читать только владелец и члены группы, привязанной к файлу.
 
 bob@al-VirtualBox:/tmp$ ls -l
 ````
@@ -177,7 +181,7 @@ alice@al-VirtualBox:/tmp$ ls -l|grep secret
 
 ````
 
-11
+11. Выйти из сессии от bob и открыть сессию от alice. Вывести содержимое файла /tmp/secret.txt созданного ранее не прибегая к команде sudo. В случае, если это не работает, объяснить.
 
 alice@al-VirtualBox:/home/al$ cat /tmp/secret.txt 
 ````
@@ -189,7 +193,7 @@ alice@al-VirtualBox:/home/al$ ls -l /tmp|grep secret
 ````
 Это связанно с тем ,что файл могут читать только владелец и группа ,а значить Bob  
 
-12
+12. Добавить пользователя alice в группу, привязанную к файлу /tmp/secret.txt.
 
 al@al-VirtualBox:~$ sudo usermod -a -G bob alice
 
@@ -200,14 +204,14 @@ uid=1001(alice) gid=1001(alice) groups=1001(alice),1002(bob)
 ````
 al@al-VirtualBox:~$ sudo su alice
 
-13
+13. Вывести содержимое файла /tmp/secret.txt.
 
 alice@al-VirtualBox:/home/al$ cat /tmp/secret.txt 
 ````
 hello
 
 ````
-14
+14. Скопировать домашнюю директорию пользователя alice в директорию /tmp/alice с помощью rsync.
 
 al@al-VirtualBox:/home$ sudo rsync -a alice/ /tmp/alice
 
@@ -216,13 +220,13 @@ al@al-VirtualBox:/home$ ls -l /tmp |grep alice
 drwxr-x--- 3 alice alice 4096 Aug 10 18:22 alice
 ````
 
-15
+15. Скопировать домашнюю директорию пользователя alice в директорию /tmp/alice на другую VM по SSH с помощью rsync. Как альтернатива, можно скопировать любую папку с хоста на VM по SSH.
 
 al@al-VirtualBox:~$ sudo rsync -a /home/al/script al99999@172.21.78.202:~/script
 
 
 
-16
+16. Удалить пользователей alice и bob вместе с домашними директориями.
 
 al@al-VirtualBox:~$ userdel -r alice
 
