@@ -218,6 +218,8 @@ drwxr-x--- 3 alice alice 4096 Aug 10 18:22 alice
 15
 
 
+![Uploading image.png…]()
+
 
 
 
