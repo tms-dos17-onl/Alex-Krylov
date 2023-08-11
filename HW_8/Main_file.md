@@ -215,9 +215,14 @@ al@al-VirtualBox:/home$ ls -l /tmp |grep alice
 ````
 drwxr-x--- 3 alice alice 4096 Aug 10 18:22 alice
 ````
+
 15
 
+
+
 al@al-VirtualBox:~$ sudo rsync -a /home/al/script al99999@172.21.78.202:~/script
+
+
 
 
 ![image](https://github.com/tms-dos17-onl/Alex-Krylov/assets/139115675/db53af20-05b5-4f2f-96f6-ca9db63517d5)
