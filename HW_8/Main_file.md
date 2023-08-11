@@ -218,7 +218,6 @@ drwxr-x--- 3 alice alice 4096 Aug 10 18:22 alice
 15
 
 
-![image](https://github.com/tms-dos17-onl/Alex-Krylov/assets/139115675/80814519-17e6-4124-b6d9-454ed2b4325c)
 
 
 
