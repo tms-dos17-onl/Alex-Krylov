@@ -236,6 +236,7 @@ userdel: bob mail spool (/var/mail/bob) not found
 ````
 17
 
+18
 
 
 
