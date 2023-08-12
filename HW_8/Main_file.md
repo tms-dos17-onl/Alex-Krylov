@@ -252,14 +252,24 @@ userdel: bob mail spool (/var/mail/bob) not found
 
 18
 
+al@al-VirtualBox:~$ journalctl -u ufw
+````
+Jul 19 18:15:11 al-VirtualBox systemd[1]: Starting ufw.service - Uncomplicated firewall...
+Jul 19 18:15:11 al-VirtualBox systemd[1]: Finished ufw.service - Uncomplicated firewall.
+-- Boot 436568fc2c574a928391e58d36d6c972 --
+Jul 19 19:24:36 al-VirtualBox systemd[1]: Starting ufw.service - Uncomplicated firewall...
+Jul 19 19:24:36 al-VirtualBox systemd[1]: Finished ufw.service - Uncomplicated firewall.
+-- Boot 7a69a4e50473411991c4b41602157342 --
+Jul 19 22:48:33 al-VirtualBox systemd[1]: Starting ufw.service - Uncomplicated firewall...
+Jul 19 22:48:33 al-VirtualBox systemd[1]: Finished ufw.service - Uncomplicated firewall.
+-- Boot 9be6d53403dc4dc693928eaaf3cfac4e --
+Jul 20 11:38:44 al-VirtualBox systemd[1]: Starting ufw.service - Uncomplicated firewall...
+Jul 20 11:38:44 al-VirtualBox systemd[1]: Finished ufw.service - Uncomplicated firewall.
+-- Boot 0468a222fcbf4fcabcc69886a2594792 --
+Jul 20 15:25:20 al-VirtualBox systemd[1]: Starting ufw.service - Uncomplicated firewall...
+Jul 20 15:25:20 al-VirtualBox systemd[1]: Finished ufw.service - Uncomplicated firewall.
 
-
-
-
-
-
-
-
+````
 
 
 
