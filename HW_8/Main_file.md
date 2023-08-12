@@ -235,6 +235,13 @@ al@al-VirtualBox:~$ sudo userdel -r bob
 userdel: bob mail spool (/var/mail/bob) not found
 ````
 17
+Если немного просмотреть то будет понятно, что больше всего %CPU И %MEM занимает процесс GHOME-SHELL.Это графическая оболочка так как у меня desktop версия Ubuntu 
+
+
+![7](https://github.com/tms-dos17-onl/Alex-Krylov/assets/139115675/a6dc470b-14ed-4ed5-9ccf-8af00e1afe5f)
+
+
+
 
 18
 
