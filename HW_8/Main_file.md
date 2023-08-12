@@ -240,7 +240,7 @@ al@al-VirtualBox:~$ sudo userdel -r bob
 ````
 userdel: bob mail spool (/var/mail/bob) not found
 ````
-17
+17. С помощью утилиты htop определить какой процесс потребляет больше всего ресурсов в системе
 
 Если немного просмотреть то будет понятно, что больше всего %CPU И %MEM занимает процесс GHOME-SHELL.Это графическая оболочка, так как у меня desktop версия Ubuntu 
 
@@ -250,7 +250,7 @@ userdel: bob mail spool (/var/mail/bob) not found
 
 
 
-18
+18. Вывести логи сервиса Firewall с помощью journalctl не прибегая к фильтрации с помощью grep
 
 al@al-VirtualBox:~$ journalctl -u ufw
 ````
