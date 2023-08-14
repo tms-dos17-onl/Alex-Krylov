@@ -14,7 +14,7 @@ elif [ $number =~ ^[0-9]+$ ] && [ $(($number%2)) -ne 0 ] ; then
 fi
 
 #!/bin/sh
-
+set -e 
 read number
 
  case $number in
