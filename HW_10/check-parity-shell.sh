@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 read number
 
 if [ $number =~ ^[0-9]+$ ]  && [ $(($number%2)) -eq 0 ] ; then
@@ -13,8 +13,8 @@ elif [ $number =~ ^[0-9]+$ ] && [ $(($number%2)) -ne 0 ] ; then
  
 fi
 
-#!/bin/bash
-set -e 
+#!/bin/sh
+
 read number
 
  case $number in
