@@ -29,4 +29,5 @@ echo odd
   fi
   ;;
   esac
+  exit 1
  
