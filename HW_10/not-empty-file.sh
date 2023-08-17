@@ -2,5 +2,5 @@
 
 if [[ -s not-empty-file.sh ]] ; then
 
-echo not-empty-file.sh 0>&1
+echo $0 0>&1
 fi
