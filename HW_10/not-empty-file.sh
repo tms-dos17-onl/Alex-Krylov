@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [[ -s not-empty-file.sh ]] ; then
-
-echo $0 0>&1
+read file
+if [[ -f $file ]] && [[ -s $file ]] ; then
+echo $0
 fi
