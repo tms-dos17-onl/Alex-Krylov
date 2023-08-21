@@ -44,4 +44,29 @@ al@al-VirtualBox:~/script$ ls check-parity-onlane.sh | ./not-empty-file.sh | xar
 ````
 7 ./not-empty-file.sh
 ````
-5
+5 
+al@al-VirtualBox:~/script$ ./generate-testing-matrix.sh 
+````
+linux - x32
+linux - x64
+linux - x86
+
+Windows - x32
+Windows - x64
+Windows - x86
+
+MacOC - x32
+MacOC - x64
+MacOC - x86
+./generate-testing-matrix.sh: line 12: --------------------------: command not found
+5 7 4 6 3 1 2
+7 5 3 1 4 2 6
+3 6 1 2 4 5 7
+3 2 7 6 4 5 1
+4 6 2 5 7 1 3
+3 6 7 2 5 1 4
+4 6 3 1 5 7 2
+````
+6
+
+7
