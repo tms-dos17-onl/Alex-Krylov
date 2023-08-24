@@ -1,5 +1,4 @@
 #!/bin/bash
-
   echo $VALUE
   x=$VALUE
   echo $x
