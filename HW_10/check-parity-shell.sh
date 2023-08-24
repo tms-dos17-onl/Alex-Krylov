@@ -9,10 +9,10 @@ case $number in
   ;;
 *)
   if [ $(($number % 2)) -eq 0 ]; then
-    echo even
+      echo even
 
   elif [ $(($number % 2)) -ne 0 ]; then
-    echo odd
+      echo odd
   fi
   ;;
 esac
