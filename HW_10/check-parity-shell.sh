@@ -1,6 +1,5 @@
 #!/bin/sh
 set -e
-
 read number
 
 case $number in
