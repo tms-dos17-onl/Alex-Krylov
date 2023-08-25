@@ -1,10 +1,10 @@
 #!/bin/bash
 work() {
      echo Hello User
- echo Введи что хочешь узнать.1:Свободная память.2:Загрузка процессора.3:Твой ip.4:Выход
-  read number
+     echo Введи что хочешь узнать.1:Свободная память.2:Загрузка процессора.3:Твой ip.4:Выход
+     read number
   
-    if [[ $number == "1" ]] || [[ $number == "2" ]] || [[ $number == "3" ]]; then
+       if [[ $number == "1" ]] || [[ $number == "2" ]] || [[ $number == "3" ]]; then
           case $number in
           1)
                cat /proc/meminfo | grep Mem | sed 's/Mem/Память/' | sed 's/Total/Общая/' | sed 's/Free/Свободная/' | sed 's/Available/Доступная/'
@@ -15,9 +15,9 @@ work() {
           3)
                ip a | grep global | sed 's/inet/инет/'
                ;;              
-   esac  
-   work  
-   else
+          esac  
+          work  
+     else
           echo "Bye"
   fi
 }
