@@ -17,6 +17,7 @@ work() {
                ;;
                
    esac  work
+   
    else
           echo "Bye"
   fi
