@@ -14,8 +14,8 @@ work() {
 		3)
 			ip a | grep global | sed 's/inet/инет/'
 			;;
-esac
-  work
+		esac
+		work
 	else
 		echo "Bye"
 	fi
