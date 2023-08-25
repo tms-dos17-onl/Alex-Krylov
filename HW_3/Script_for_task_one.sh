@@ -3,6 +3,7 @@ work() {
      echo Hello User
  echo Введи что хочешь узнать.1:Свободная память.2:Загрузка процессора.3:Твой ip.4:Выход
   read number
+  
     if [[ $number == "1" ]] || [[ $number == "2" ]] || [[ $number == "3" ]]; then
           case $number in
           1)
