@@ -7,4 +7,3 @@ sudo lshw -class processor tree -a /home/user_with_group4/h >> sudo | echo -----
 sudo free tree -a /home/user_with_group4/h >> sudo | echo ------ >> /home/user_with_group4/h
 sudo ls -l /boot tree -a /home/user_with_group4/h >> sudo | echo ----- >> /home/user_with_group4/h
 sudo lsblk tree -a /home/user_with_group4/h >> sudo | echo ------- >> /home/user_with_group4/h
-
