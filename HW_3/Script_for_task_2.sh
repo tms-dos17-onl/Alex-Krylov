@@ -1,4 +1,5 @@
 #!/bin/bash
+
 sudo useradd -m user_with_group4
 sudo touch user_with_group4 h
 sudo chmod 777 /home/user_with_group4/h
