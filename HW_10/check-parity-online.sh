@@ -13,4 +13,4 @@ case $number in
 	;;
 
 esac
-exit 1
+
