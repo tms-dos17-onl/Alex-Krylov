@@ -12,4 +12,3 @@ case $number in
 	;;
 
 esac
-
