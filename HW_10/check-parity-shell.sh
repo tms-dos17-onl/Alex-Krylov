@@ -16,4 +16,3 @@ case $number in
 	fi
 	;;
 esac
-exit 1
