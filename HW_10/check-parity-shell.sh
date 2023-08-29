@@ -1,5 +1,4 @@
 #!/bin/sh
-
 set -e
 read -r number
 
