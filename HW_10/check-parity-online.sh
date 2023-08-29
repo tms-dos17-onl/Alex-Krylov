@@ -1,10 +1,7 @@
 #!/bin/bash
 set -e
-<<<<<<< HEAD
-=======
 
 
->>>>>>> 632b6f6 (Update check-parity-online.sh)
 read number
 
 case $number in
