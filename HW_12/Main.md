@@ -29,6 +29,12 @@ sudo apt install nginx
 
 4. Скопировать папку https://github.com/tms-dos17-onl/_sandbox/tree/main/lecture15/api на VM и запустить Python REST Api приложение согласно инструкции. Проверить работоспособность всех доступных REST Api методов с помощью Swagger.
 
+al@al-VirtualBox:~/Downloads/_sandbox-main/lecture15/api$ python3 -m venv .venv
+
+al@al-VirtualBox:~/Downloads/_sandbox-main/lecture15/api$ source .venv/bin/activate
+
+
+(.venv) al@al-VirtualBox:~/Downloads/_sandbox-main/lecture15/api$ python3 -m pip install -r requirements.txt
 
 
 ![image](https://github.com/tms-dos17-onl/Alex-Krylov/assets/139115675/fe27ff6d-c986-4e22-b0d2-c1eefe4d08a5)
