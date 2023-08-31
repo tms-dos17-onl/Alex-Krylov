@@ -9,8 +9,8 @@ for i in "${!os[@]}"; do
 	done
 done
 #Этого не было в задании,просто хотел понять как сделать рандомную перемешку значений массива.
-array=(1 2 3 4 5 6 7) 
-for i in "${array[@]}"; do 
+array=(1 2 3 4 5 6 7)
+for i in "${array[@]}"; do
 	mapfile -t shuffled_array < <(shuf -e "${array[@]}")
-	echo "${shuffled_array[@]}" 
+	echo "${shuffled_array[@]}"
 done
