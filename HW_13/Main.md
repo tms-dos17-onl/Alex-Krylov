@@ -10,6 +10,8 @@
 5. Изменить конфигурацию Nginx, чтобы он использовал в качестве бэкенда 2 приложения.
 6. Повторить JMeter сценарий и сравнить результаты.
 
+![image](https://github.com/tms-dos17-onl/Alex-Krylov/assets/139115675/3f5b8887-27f3-4032-a6eb-a6dd7f070a23)
+
 
 ![image](https://github.com/tms-dos17-onl/Alex-Krylov/assets/139115675/c3d633f0-75ee-421e-b84f-339229533100)
 
