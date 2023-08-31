@@ -57,6 +57,22 @@ al@al-VirtualBox:~/Downloads/_sandbox-main/lecture15/api$ source .venv/bin/activ
 
 ![image](https://github.com/tms-dos17-onl/Alex-Krylov/assets/139115675/793cae96-39d7-46e9-a025-e46167c25604)
 
+5. Настроить Nginx как Reverse Proxy для Python REST Api приложения из предыдущего пункта. А затем:
+- Открыть Swagger для веб-приложения через Nginx (http://<NGINX_IP>:<NGINX_PORT>/apidocs).
+- Проверить работоспособность всех доступных REST Api методов через Nginx с помощью Swagger. Убедиться, что нет ошибок ни в выводе Rest Api приложения, ни в HTTP ответе в Swagger. При необходимости поправить конфигурацию Nginx сервера, чтобы все методы работали.
+- Для тестирования метода /uploadFile использовать файл размером больше 1MB.
+- Вывести в консоль содержимое файла конфигурации Nginx с измененными значениями и комментариями.
+
+![image](https://github.com/tms-dos17-onl/Alex-Krylov/assets/139115675/989814fe-351d-4f40-9def-caf44e40c5a4)
+
+
+
+
+![image](https://github.com/tms-dos17-onl/Alex-Krylov/assets/139115675/61452b5d-d783-40fd-829b-70e7e8ef84c5)
+
+![image](https://github.com/tms-dos17-onl/Alex-Krylov/assets/139115675/bc1193a9-1d74-4f83-aea0-4e0dcdf3eea6)
+
+![image](https://github.com/tms-dos17-onl/Alex-Krylov/assets/139115675/9e562883-b9c2-4144-9718-d6c397069892)
 
 
 
