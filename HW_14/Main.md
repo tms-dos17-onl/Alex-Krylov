@@ -49,7 +49,8 @@ jQ1hcWylnYscX6EBLgDsc4MXLEPEbk5LkRuGcu7VV3lNZiQiEdUdByf4c2tivq7G
 ZQIDAQAB
 -----END PUBLIC KEY-----
 ````
-2
+2. Создать скрипт encrypt.sh, который считывает стандартный поток ввода, шифрует его при помощи public.pem через OpenSSL и выводит в стандартный поток вывода.
+
 al@al-VirtualBox:~/script$ echo "dfsdfd"|./secret.sh 
 ````
 �q�Q;�[�9�/j���s</�g���K�
