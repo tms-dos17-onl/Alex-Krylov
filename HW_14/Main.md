@@ -1,7 +1,9 @@
 1. Сгенерировать пару ключей/сертификатов (private.pem и public.pem) при помощи OpenSSL.
+
 al@al-VirtualBox:~/certificate$ sudo openssl genrsa -out private.pem 2048
-[sudo] password for al: 
+
 al@al-VirtualBox:~/certificate$ cat private.pem 
+````
 -----BEGIN PRIVATE KEY-----
 MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDfulPkZ+KPtlDx
 JNgw5AoLtd4T1qIvv5nYkbfbRnas59Tu/t4S5lvvXGL5ucSSMwnUQPCBXXTFe/aW
@@ -30,12 +32,13 @@ ZMWBJkcGiXfU6ym8HvWLTsH3f1qAC+zPgGKcC6E99z4MeqILcTpHiPeLSoz4tM0J
 5IRADKSoaB8EskUkKo+N6nh4wGjmNwtyDCMqhdebSJLjeLmAZTxGVEQqXrahYxr/
 FZfZhLoyHSszzxXBN/7NpDE=
 -----END PRIVATE KEY-----
-al@al-VirtualBox:~/certificate$ openssl rsa -in private.pem -puboit -out public.pem 
-rsa: Unknown cipher: puboit
-rsa: Use -help for summary.
+````
 al@al-VirtualBox:~/certificate$ sudo openssl rsa -in private.pem -pubout -out public.pem 
+````
 writing RSA key
+````
 al@al-VirtualBox:~/certificate$ cat public.pem 
+````
 -----BEGIN PUBLIC KEY-----
 MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA37pT5Gfij7ZQ8STYMOQK
 C7XeE9aiL7+Z2JG320Z2rOfU7v7eEuZb71xi+bnEkjMJ1EDwgV10xXv2lmnt5SVP
@@ -45,3 +48,4 @@ svbroycoAUnUEEhRXdPh+oEEmjxqLn9sFT9jECu9DSw4GDLVtQNns/+xev+LP964
 jQ1hcWylnYscX6EBLgDsc4MXLEPEbk5LkRuGcu7VV3lNZiQiEdUdByf4c2tivq7G
 ZQIDAQAB
 -----END PUBLIC KEY-----
+````
