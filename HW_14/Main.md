@@ -49,3 +49,17 @@ jQ1hcWylnYscX6EBLgDsc4MXLEPEbk5LkRuGcu7VV3lNZiQiEdUdByf4c2tivq7G
 ZQIDAQAB
 -----END PUBLIC KEY-----
 ````
+2
+al@al-VirtualBox:~/script$ sudo nano secret.sh 
+
+al@al-VirtualBox:~/script$ ./secret.sh 
+
+````
+fddfg
+FW�2_������n����곃k
+                   =�Y��� �E,cO��^�l�e�;j�J�?��h�,��0@��b"��,C�s��oB�q���'�<�̼1����C�u�Cg��)�	p�Ī��dY���
+                                                                                                          �?�
+                                                                                                             {����b��4��K�w�X
+        _al͛A5�_�Dأn�2�ޔ�i��x�;`���r
+                                   3�ŦjP4�	����B;���6nm�t;s�_�"E}���N���H��Q�2�Ѻ�_<����$+>��qo�׉�al@al-VirtualBox:~/script$ 
+````
