@@ -80,6 +80,7 @@ al@al-VirtualBox:~/script$ cat /home/al/certificate/sec2.txt
 ````
 Hello,World
 ````
+
 Вариант 2
 
 al@al-VirtualBox:~/script$ ./decrypt.sh 
