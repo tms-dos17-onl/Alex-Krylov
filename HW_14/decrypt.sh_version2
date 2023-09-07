@@ -6,7 +6,3 @@ encript=$(echo "$x" | openssl pkeyutl -encrypt -pubin -inkey "$file2" | base64)
 echo "$encript"
 descrypt=$(echo "$encript" | base64 -d | openssl pkeyutl -decrypt -inkey "$file")
 echo "$descrypt"
-
-
-
-
