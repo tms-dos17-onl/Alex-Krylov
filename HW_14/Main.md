@@ -51,12 +51,30 @@ ZQIDAQAB
 ````
 2. Создать скрипт encrypt.sh, который считывает стандартный поток ввода, шифрует его при помощи public.pem через OpenSSL и выводит в стандартный поток вывода.
 
-al@al-VirtualBox:~/script$ echo "dfsdfd"|./secret.sh 
+al@al-VirtualBox:~/script$ ./encrypt.sh 
 ````
-�q�Q;�[�9�/j���s</�g���K�
-                       d�;Ql��Zr?/��Ho2Y�y��E}yu�r
-                                                  ��zmO��F�mږ�
-y%�6�T���C�o��	[��.�Ch��Ar�y��8��bYN�q��CS�p�<���Q���^��G�$��F��*8� ������Z�ؔH���ݽ���ܾ��n+��p�M'��4�	A��*���υ��������q��F	`��al@al-VirtualBox:~/script$
+ghgfh
+lb6mXezNIWWCAkt7tsx61l2kU7J6ZygmvucaPf5L9ahcJExECiqmA8sdOMwLljZSwUXTA+iNScWY
+Nzt2J4P2sKJc8IPLiEWWO7zqPAC5PgLOXowszIMWvg+Ncd8RxYB2ZGaATqGfboPE9h6yyaqJfrJu
+3XLT8aAiUvm9eU4j0I+m0/xBLTPVdcqZx9PKrP5ix5HqUrcibdrYfQD7VULTmCWsZl/WekFjPBgm
+qyVgAKLSnd+8ptsR/6f5IxNSpRUuLnXPegBRiYsGzwQ7yZ9ogy0XO6WhA/bRsRJvfpAUz53Mhqs4
+qu6p6Qbc7T7JOBVnDRySY+c1oKiX7j5jxjFcFg==
 ````
 3
 
+echo "Hello,World" > /home/al/certificate/sec.txt |./secret.sh
+
+al@al-VirtualBox:~/script$ cat /home/al/certificate/sec.txt
+````
+Hello,World
+````
+al@al-VirtualBox:~/script$ cat /home/al/certificate/sec1.txt
+````
+y�=7@�d]�Z_��ޗ�����+ů���f��/����&Ă�?�G����2U� &�7]>$�jk^
+cƊ}�~��?ړR`ȶ#���E9��
+)��mXV�������i��N�N�̼��,zl;�����0Z������D�^al@al-VirtualBox:~/script$ H)�zd��`q�	��͋e�2j�1���
+````
+al@al-VirtualBox:~/script$ cat /home/al/certificate/sec2.txt
+````
+Hello,World
+````
