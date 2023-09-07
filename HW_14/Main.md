@@ -95,6 +95,9 @@ ertert5
 ````
 al@al-VirtualBox:~/certificate$ openssl req -in certyficate.csr -noout -text
 
+4. Сгенерировать публичный сертификат public-nginx.pem для private.pem через OpenSSL, используя <LASTNAME>.io в качестве Common Name (CN).
+
+
 Certificate Request:
     Data:
         Version: 1 (0x0)
@@ -142,3 +145,4 @@ Certificate Request:
         66:63:dc:bf:99:f9:88:c5:9c:d9:0b:cc:30:20:62:d0:2c:85:
         e6:e5:96:5e:2a:c3:53:bb:e9:61:9f:ee:62:d5:db:4d:d2:4f:
         37:d4:68:f0
+        
