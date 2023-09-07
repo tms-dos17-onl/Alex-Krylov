@@ -60,7 +60,8 @@ Nzt2J4P2sKJc8IPLiEWWO7zqPAC5PgLOXowszIMWvg+Ncd8RxYB2ZGaATqGfboPE9h6yyaqJfrJu
 qyVgAKLSnd+8ptsR/6f5IxNSpRUuLnXPegBRiYsGzwQ7yZ9ogy0XO6WhA/bRsRJvfpAUz53Mhqs4
 qu6p6Qbc7T7JOBVnDRySY+c1oKiX7j5jxjFcFg==
 ````
-3
+3. Создать скрипт decrypt.sh, который считывает стандартный поток ввода, расшифровывает его при помощи private.pem через OpenSSL и выводит в стандартный поток вывода.
+Вариант 1
 
 echo "Hello,World" > /home/al/certificate/sec.txt |./secret.sh
 
@@ -78,3 +79,4 @@ al@al-VirtualBox:~/script$ cat /home/al/certificate/sec2.txt
 ````
 Hello,World
 ````
+Вариант 2
