@@ -97,7 +97,10 @@ al@al-VirtualBox:~/certificate$ openssl req -in certyficate.csr -noout -text
 
 4. Сгенерировать публичный сертификат public-nginx.pem для private.pem через OpenSSL, используя <LASTNAME>.io в качестве Common Name (CN).
 
+al@al-VirtualBox:~/certificate$ openssl req -new -key private.pem -out certyficate.csr
 
+al@al-VirtualBox:~/certificate$ openssl req -in certyficate.csr -noout -text
+````
 Certificate Request:
     Data:
         Version: 1 (0x0)
@@ -145,4 +148,64 @@ Certificate Request:
         66:63:dc:bf:99:f9:88:c5:9c:d9:0b:cc:30:20:62:d0:2c:85:
         e6:e5:96:5e:2a:c3:53:bb:e9:61:9f:ee:62:d5:db:4d:d2:4f:
         37:d4:68:f0
-        
+````
+al@al-VirtualBox:~/certificate$ openssl x509 -signkey private.pem -in certyficate.csr -req -days 365 -out certificate.crt
+````
+Certificate request self-signature ok
+subject=C = AU, ST = Some-State, O = Internet Widgits Pty Ltd, CN = Krylov.io
+````
+al@al-VirtualBox:~/certificate$ openssl x509 -in certificate.crt -noout -text
+
+````
+Certificate:
+    Data:
+        Version: 1 (0x0)
+        Serial Number:
+            4e:41:58:8d:5f:76:5a:33:28:63:ad:8d:ac:0d:c6:ae:04:9a:ba:b9
+        Signature Algorithm: sha256WithRSAEncryption
+        Issuer: C = AU, ST = Some-State, O = Internet Widgits Pty Ltd, CN = Krylov.io
+        Validity
+            Not Before: Sep  7 15:16:11 2023 GMT
+            Not After : Sep  6 15:16:11 2024 GMT
+        Subject: C = AU, ST = Some-State, O = Internet Widgits Pty Ltd, CN = Krylov.io
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+                Public-Key: (2048 bit)
+                Modulus:
+                    00:ac:28:ea:e1:0d:53:3b:9d:39:42:4b:16:ad:e9:
+                    a5:fa:f8:5f:58:7a:4e:b9:3b:18:a9:5f:ea:4a:f6:
+                    b6:08:f2:3a:75:70:34:a9:70:a3:ba:57:ec:bc:cd:
+                    61:a7:cf:08:58:c0:27:9e:98:e1:6d:e0:da:1c:fb:
+                    a7:94:82:4e:44:f9:ed:4b:d7:d3:64:14:22:1b:9a:
+                    32:0e:8c:19:6c:11:7a:6d:13:b7:6f:22:2d:34:03:
+                    df:22:fa:4e:f7:0f:fc:ce:70:ca:c2:7e:f7:3a:3c:
+                    b2:39:54:48:a0:bd:e1:95:1d:62:ea:d8:b6:4f:21:
+                    2d:fb:92:ca:a1:1c:14:22:9e:ea:3a:2a:3a:ba:ad:
+                    ae:d8:57:97:77:12:f6:c7:f6:df:87:f4:56:83:1a:
+                    85:e6:fc:9d:14:86:c3:51:b5:ad:06:83:60:54:77:
+                    d1:a1:85:bf:e1:3b:26:c1:cc:af:9c:da:c0:e4:56:
+                    32:87:ba:0b:70:0c:96:7b:ac:1a:3c:30:f5:b4:21:
+                    61:29:ca:4f:69:80:ad:49:01:65:66:2b:42:15:ca:
+                    b4:83:29:d1:ac:2c:3c:98:83:48:02:29:a7:08:79:
+                    3d:72:d8:09:d5:ce:f8:58:d6:af:92:f8:67:5e:c6:
+                    ac:a3:7b:03:9b:5d:7b:85:a1:06:e4:30:83:cf:b6:
+                    54:6d
+                Exponent: 65537 (0x10001)
+    Signature Algorithm: sha256WithRSAEncryption
+    Signature Value:
+        47:1e:a0:12:f3:12:44:b1:5b:25:04:90:93:fb:fd:08:ab:36:
+        07:6a:b1:81:85:1b:95:31:2c:91:d2:d2:c2:ce:f4:02:9b:c3:
+        92:99:5e:07:c0:35:7b:46:01:14:71:d6:26:29:c7:f5:17:3b:
+        13:5a:76:35:d3:1c:f4:2a:58:8e:f5:ed:35:53:12:38:91:f4:
+        b9:e9:d7:a8:c9:00:86:2e:e8:69:94:fe:76:ce:34:ea:5f:e2:
+        f3:3d:eb:85:90:0c:5a:4d:f5:0e:5c:99:07:9d:82:9e:86:a3:
+        d4:4b:35:9b:64:c7:95:4a:2b:38:74:ed:15:51:1a:68:e0:f7:
+        05:01:5b:e4:fe:7e:df:cc:11:1d:b0:0b:8f:26:dd:70:18:82:
+        c9:57:69:50:b4:b2:77:dc:14:11:d0:1c:0c:df:39:73:a9:e1:
+        a4:2b:04:f3:2e:30:b7:8b:2b:72:a0:c7:00:5e:93:75:82:66:
+        23:f1:b3:96:08:2b:6a:96:98:bf:4b:90:d0:9d:71:17:05:34:
+        97:9b:89:97:c3:af:a8:73:85:48:a7:5f:70:0b:8f:b8:61:0b:
+        ef:33:ef:97:1e:54:e9:84:11:1c:8e:6c:96:62:34:d9:8f:4c:
+        46:ee:ce:ee:58:d1:10:23:52:51:de:70:21:52:66:48:49:51:
+        9f:1a:93:6e
+````
