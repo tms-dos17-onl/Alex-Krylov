@@ -80,3 +80,13 @@ al@al-VirtualBox:~/script$ cat /home/al/certificate/sec2.txt
 Hello,World
 ````
 Вариант 2
+al@al-VirtualBox:~/script$ ./decrypt.sh 
+````
+ertert5
+ICLPzoRO1OmgButOXVNFS5i3ZdwLy5Yysf8yhNPz0tROrNmWa3VC85jCeDx+ApeghHqLHgsOI+/d
+LUfSlCGrItVtU16F18VpyrZVI6g3Zv2BXpXdYvUERxG1zBLnviX5lrseZkmHijh5WtP0ryG3tfTA
+78wa2axkh4TmK9rwrHi0nVwZoqtnrPPZm+qlEbBkYPQTYevhcwbX+CtXwGwkxRIdW5Y/u3nnQkEY
+dG8S0pzwxNQcVu72XSBXAj65m4j2WJXbSKgMx9iCUW6WVSk92ltzRzJVsPgtNYqR5S2AFYpFSmDg
+ndNqKPckwYL/lOp2Z+FNbo91l/FfGqOVofgEhg==
+ertert5
+````
