@@ -1,6 +1,6 @@
 1. Сгенерировать пару ключей/сертификатов (private.pem и public.pem) при помощи OpenSSL.
 
-al@al-VirtualBox:~/certificate$ sudo openssl genrsa -out private.pem 2048
+al@al-VirtualBox:~/certificate$ sudo openssl genpkey -algorithm RSA -out private.pem -pkeyopt rsa_keygen_bits:2048
 
 al@al-VirtualBox:~/certificate$ cat private.pem 
 ````
@@ -58,3 +58,5 @@ al@al-VirtualBox:~/script$ echo "dfsdfd"|./secret.sh
                                                   ��zmO��F�mږ�
 y%�6�T���C�o��	[��.�Ch��Ar�y��8��bYN�q��CS�p�<���Q���^��G�$��F��*8� ������Z�ؔH���ݽ���ܾ��n+��p�M'��4�	A��*���υ��������q��F	`��al@al-VirtualBox:~/script$
 ````
+3
+
