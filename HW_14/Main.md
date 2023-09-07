@@ -64,7 +64,7 @@ qu6p6Qbc7T7JOBVnDRySY+c1oKiX7j5jxjFcFg==
 
 Вариант 1
 
-echo "Hello,World" > /home/al/certificate/sec.txt |./secret.sh
+echo "Hello,World" > /home/al/certificate/sec.txt |./decrypt.sh
 
 al@al-VirtualBox:~/script$ cat /home/al/certificate/sec.txt
 ````
