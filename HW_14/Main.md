@@ -237,5 +237,7 @@ server {
 ````
 ![image](https://github.com/tms-dos17-onl/Alex-Krylov/assets/139115675/fa817977-70e4-462b-87b6-dc9f524f72ee)
 
+6. Настроить доверие публичному сертификату в браузере и проверить это.
+
 
 
