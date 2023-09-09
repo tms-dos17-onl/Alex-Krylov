@@ -237,4 +237,5 @@ server {
 ````
 ![image](https://github.com/tms-dos17-onl/Alex-Krylov/assets/139115675/fa817977-70e4-462b-87b6-dc9f524f72ee)
 
-openssl x509 -req -signkey ver2.key -in ver2.csr -out ver2.crt -days 365 -nodes -extfile /home/al/milti/ope.cnf -extensions v3_req
+openssl x509 -req -signkey ver2.key -in ver2.csr -out ver2.crt -days 365 -extensions v3_req -extfile /home/al/milti/ope.cnf -nodes
+
