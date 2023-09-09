@@ -241,4 +241,7 @@ server {
 
 ![image](https://github.com/tms-dos17-onl/Alex-Krylov/assets/139115675/aeea17d4-6191-4545-9720-b8378ab20a9c)
 
+7. А теперь открыть домашнюю страницу Nginx по HTTPS через curl не прибегая к опции -k.
+
+
 
