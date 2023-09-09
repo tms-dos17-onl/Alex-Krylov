@@ -244,4 +244,42 @@ server {
 7. А теперь открыть домашнюю страницу Nginx по HTTPS через curl не прибегая к опции -k.
 
 
+al@al-VirtualBox:~/certificate/home$ sudo cp ver2.pem /etc/ssl/certs/
+
+al@al-VirtualBox:~/certificate/home$ sudo update-ca-certificates
+````
+Updating certificates in /etc/ssl/certs...
+0 added, 0 removed; done.
+Running hooks in /etc/ca-certificates/update.d...
+Processing triggers for ca-certificates-java (20230103ubuntu1) ...
+done.
+done.
+````
+al@al-VirtualBox:~/certificate/home$ curl https://10.0.2.15/index.nginx-debian.html
+````
+<!DOCTYPE html>
+<html>
+<head>
+<title>Welcome to nginx!</title>
+<style>
+html { color-scheme: light dark; }
+body { width: 35em; margin: 0 auto;
+font-family: Tahoma, Verdana, Arial, sans-serif; }
+</style>
+</head>
+<body>
+<h1>Welcome to nginx!</h1>
+<p>If you see this page, the nginx web server is successfully installed and
+working. Further configuration is required.</p>
+
+<p>For online documentation and support please refer to
+<a href="http://nginx.org/">nginx.org</a>.<br/>
+Commercial support is available at
+<a href="http://nginx.com/">nginx.com</a>.</p>
+
+<p><em>Thank you for using nginx.</em></p>
+</body>
+</html>
+````
+
 
