@@ -211,4 +211,27 @@ Certificate:
 ````
 5. Настроить Nginx на работу по HTTPS, используя сертификаты из предыдущего задания. Например, чтобы Nginx возвращал домашнюю страницу по HTTPS.
 
-
+al@al-VirtualBox:~$ cat /etc/nginx/sites-available/default |grep -ve "#" -ve "^$"
+````
+server {
+        listen 82;
+        listen [::]:82;
+	 listen 443 ssl default_server;
+	 listen [::]:443 ssl default_server;
+        ssl_certificate      certificate.crt;
+        ssl_certificate_key  private.pem;
+	root /var/www/html;
+	index index.php index.html index.htm index.nginx-debian.html;
+	server_name _;
+	location / {
+		try_files $uri $uri/ =404;
+	}
+	location ~ \.php$ {
+		include snippets/fastcgi-php.conf;
+		fastcgi_pass unix:/run/php/php7.4-fpm.sock;
+	}
+        location ~ /\.ht {
+		deny all;
+	}
+}
+````
