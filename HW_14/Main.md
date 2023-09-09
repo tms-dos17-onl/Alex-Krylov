@@ -239,5 +239,6 @@ server {
 
 6. Настроить доверие публичному сертификату в браузере и проверить это.
 
+![image](https://github.com/tms-dos17-onl/Alex-Krylov/assets/139115675/aeea17d4-6191-4545-9720-b8378ab20a9c)
 
 
