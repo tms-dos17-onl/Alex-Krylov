@@ -1,5 +1,7 @@
 1. Установить MySQL на VM.
 
+al@al-VirtualBox:~$ sudo apt install mysql-server mysql-client
+
 3. Создать схему БД clinic и наполнить её данными используя скрипты из https://github.com/tms-dos17-onl/_sandbox/tree/main/lecture18/mysql/initdb.d/data.
 
 ![image](https://github.com/tms-dos17-onl/Alex-Krylov/assets/139115675/76bc7c14-ce0b-49e7-bd2c-96efb71ee917)
