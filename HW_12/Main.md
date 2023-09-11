@@ -74,10 +74,3 @@ al@al-VirtualBox:~/Downloads/_sandbox-main/lecture15/api$ source .venv/bin/activ
 
 ![image](https://github.com/tms-dos17-onl/Alex-Krylov/assets/139115675/9e562883-b9c2-4144-9718-d6c397069892)
 
-
-
-
-
-
-
-
