@@ -11,6 +11,6 @@ done
 #Этого не было в задании,просто хотел понять как сделать рандомную перемешку значений массива.
 array=(1 2 3 4 5 6 7)
 for i in "${array[@]}"; do
-
-	echo "$(shuf -e "${array[@]}")"
+	mapfile -t shuffled_array < <(shuf -e "${array[@]}")
+	echo "${shuffled_array[@]}"
 done

@@ -119,6 +119,7 @@ exit
 ````
 al@al-VirtualBox:~$ sudo su bob
 
+
 bob@al-VirtualBox:/home/al$ cd ~
 
 bob@al-VirtualBox:~$ cat /home/alice/secre.txt
