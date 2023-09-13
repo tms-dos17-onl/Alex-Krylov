@@ -26,3 +26,4 @@ al@al-VirtualBox:~$ sudo ls /var/lib/mysql/
  binlog.000006	     binlog.000014   binlog.index   '#ib_16384_1.dblwr'   performance_schema   undo_002
 ````
 5
+![image](https://github.com/tms-dos17-onl/Alex-Krylov/assets/139115675/2b44c9df-6c20-4b3d-8fed-503d7d55ad99)
