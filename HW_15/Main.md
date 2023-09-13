@@ -13,3 +13,15 @@ al@al-VirtualBox:~$ sudo apt install mysql-server mysql-client
 4
 
 al@al-VirtualBox:~$ sudo mysqldump -uroot -p******** clinic > /var/lib/mysql/clinic_1.sql
+
+al@al-VirtualBox:~$ sudo ls /var/lib/mysql/
+````
+ al-VirtualBox.pid   binlog.000007   binlog.000015   ca-key.pem		  ib_buffer_pool       private_key.pem
+ auto.cnf	     binlog.000008   binlog.000016   ca.pem		  ibdata1	       public_key.pem
+ binlog.000001	     binlog.000009   binlog.000017   client-cert.pem	  ibtmp1	       server-cert.pem
+ binlog.000002	     binlog.000010   binlog.000018   client-key.pem	 '#innodb_redo'        server-key.pem
+ binlog.000003	     binlog.000011   binlog.000019   clinic		 '#innodb_temp'        sys
+ binlog.000004	     binlog.000012   binlog.000020   debian-5.7.flag	  mysql		       test_tema
+ binlog.000005	     binlog.000013   binlog.000021  '#ib_16384_0.dblwr'   mysql.ibd	       undo_001
+ binlog.000006	     binlog.000014   binlog.index   '#ib_16384_1.dblwr'   performance_schema   undo_002
+````
