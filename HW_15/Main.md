@@ -25,3 +25,4 @@ al@al-VirtualBox:~$ sudo ls /var/lib/mysql/
  binlog.000005	     binlog.000013   binlog.000021  '#ib_16384_0.dblwr'   mysql.ibd	       undo_001
  binlog.000006	     binlog.000014   binlog.index   '#ib_16384_1.dblwr'   performance_schema   undo_002
 ````
+5
