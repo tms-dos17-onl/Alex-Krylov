@@ -32,3 +32,5 @@ al@al-VirtualBox:~$ sudo ls /var/lib/mysql/
 ![image](https://github.com/tms-dos17-onl/Alex-Krylov/assets/139115675/ee496ad0-e90a-4a87-8913-32e85508384d)
 -
 ![image](https://github.com/tms-dos17-onl/Alex-Krylov/assets/139115675/897321c8-9535-4ea6-a4c2-67bfc6bdde0a)
+
+mysql> DELETE FROM Doctor, Appointment WHERE Doctor.id = 1 AND Appointment.id = 1;
