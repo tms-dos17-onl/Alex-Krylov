@@ -30,3 +30,5 @@ al@al-VirtualBox:~$ sudo ls /var/lib/mysql/
 ![image](https://github.com/tms-dos17-onl/Alex-Krylov/assets/139115675/2b44c9df-6c20-4b3d-8fed-503d7d55ad99)
 -
 ![image](https://github.com/tms-dos17-onl/Alex-Krylov/assets/139115675/ee496ad0-e90a-4a87-8913-32e85508384d)
+
+mysql> SELECT Patient.Firstname, Patient.LastName, Room.Number, Appointment.Date FROM ((Patient INNER JOIN Appointment ON Patient.id  = Appointment.Patient_id) INNER JOIN Room ON Appointment.Room_id = Room.id) UPDATE Appointment SET Date = 2022-02-09 WHERE Date=2022-01-09;
