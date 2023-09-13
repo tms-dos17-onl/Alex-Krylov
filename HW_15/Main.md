@@ -32,5 +32,41 @@ al@al-VirtualBox:~$ sudo ls /var/lib/mysql/
 ![image](https://github.com/tms-dos17-onl/Alex-Krylov/assets/139115675/ee496ad0-e90a-4a87-8913-32e85508384d)
 -
 ![image](https://github.com/tms-dos17-onl/Alex-Krylov/assets/139115675/897321c8-9535-4ea6-a4c2-67bfc6bdde0a)
-
-mysql> DELETE FROM Doctor, Appointment WHERE Doctor.id = 1 AND Appointment.id = 1;
+-
+mysql> SET FOREIGN_KEY_CHECKS=0;
+````
+Query OK, 0 rows affected (0.00 sec)
+````
+mysql> DELETE Doctor, Appointment FROM Doctor INNER JOIN Appointment ON Doctor.id = Appointment.Doctor_id WHERE Doctor.id = 1 AND Appointment.id = 1;
+````
+Query OK, 2 rows affected (0.05 sec)
+````
+mysql> SET FOREIGN_KEY_CHECKS=1;
+````
+Query OK, 0 rows affected (0.00 sec)
+````
+mysql> SELECT * FROM Appointment;
+````
++----+---------------------+------------+-----------+---------+
+| id | Date                | Patient_id | Doctor_id | Room_id |
++----+---------------------+------------+-----------+---------+
+|  2 | 2022-02-09 00:00:00 |          3 |         2 |       1 |
+|  3 | 2022-02-09 00:00:00 |          1 |         3 |       4 |
+|  4 | 2022-02-01 00:00:00 |          2 |         4 |       3 |
+|  5 | 2022-02-03 00:00:00 |          4 |         5 |       2 |
++----+---------------------+------------+-----------+---------+
+4 rows in set (0.00 sec)
+````
+mysql> SELECT * FROM Doctor;
+````
++----+----------------+--------------------+---------------+-----------------------------+------------+
+| id | FirstName      | LastName           | Telephone     | Email                       | BirthDate  |
++----+----------------+--------------------+---------------+-----------------------------+------------+
+|  2 | Иван           | Купитман           | +37529XXXXXXX | ivan.kupitman@clinic.com    | 1963-03-13 |
+|  3 | Дмитрий        | Левин              | +37529XXXXXXX | dmitry.levin@clinic.com     | 1986-01-15 |
+|  4 | Варвара        | Черноус            | +37529XXXXXXX | varvara.chernous@clinic.com | 1988-04-14 |
+|  5 | Глеб           | Романенко          | +37529XXXXXXX | gleb.romanenko@clinic.com   | 1984-09-19 |
+|  6 | Семён          | Лобанов            | +37529XXXXXXX | semen.lobanoff@clinic.com   | 1983-11-22 |
++----+----------------+--------------------+---------------+-----------------------------+------------+
+5 rows in set (0.00 sec)
+````
