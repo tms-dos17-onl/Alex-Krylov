@@ -100,7 +100,7 @@ curl -fsSL https://pgp.mongodb.com/server-7.0.asc | \
    echo "deb [ arch=amd64,arm64 signed-by=/usr/share/keyrings/mongodb-server-7.0.gpg ] https://repo.mongodb.org/apt/ubuntu jammy/mongodb-org/7.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-7.0.list
    
 sudo apt-get update
-
+https://www.mongodb.com/community/forums/t/problems-installing-mongodb-on-ubuntu-20-04/101937/4
 sudo apt-get install -y mongodb-org
 
 
