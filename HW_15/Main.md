@@ -71,6 +71,8 @@ mysql> SELECT * FROM Doctor;
 5 rows in set (0.00 sec)
 ````
 -
+mysql> INSERT INTO Doctor ( id, FirstName, LastName, Telephone, Email, BirthDate) VALUES ( 1 , 'Phil', 'Richerts', '+37517xxxxx', 'Phil@gmail.com', '1987.04.23');
+
 ![image](https://github.com/tms-dos17-onl/Alex-Krylov/assets/139115675/8deb6880-14d8-4492-a4a6-4128735079ea)
 -
 ![image](https://github.com/tms-dos17-onl/Alex-Krylov/assets/139115675/22031bdb-4342-427d-8eea-aa6cffc969b2)
