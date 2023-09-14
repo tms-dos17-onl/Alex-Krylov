@@ -91,3 +91,4 @@ al@al-VirtualBox:/home$ sudo sh -c "cd /var/lib/mysql; mysql clinic < clinic_1.s
 ![image](https://github.com/tms-dos17-onl/Alex-Krylov/assets/139115675/bf052652-1c1c-41b4-8ed2-fbde38b0b216)
 
 7
+curl -fsSL https://www.mongodb.org/static/pgp/server-4.4.asc | sudo apt-key add -
