@@ -73,7 +73,8 @@ mysql> SELECT * FROM Doctor;
 -
 ![image](https://github.com/tms-dos17-onl/Alex-Krylov/assets/139115675/d1782856-067f-47c8-b978-c3e8e45ed7dd)
 -
-![image](https://github.com/tms-dos17-onl/Alex-Krylov/assets/139115675/8deb6880-14d8-4492-a4a6-4128735079ea)
+![image](https://github.com/tms-dos17-onl/Alex-Krylov/assets/139115675/faefa751-5f22-4b8f-be4e-d575f883ddc1)
+
 -
 ![image](https://github.com/tms-dos17-onl/Alex-Krylov/assets/139115675/22031bdb-4342-427d-8eea-aa6cffc969b2)
 
