@@ -84,7 +84,7 @@ mysql> SELECT * FROM Doctor;
 
 mysql> source /var/lib/mysql/clinic_1.sql;
 
-А можно через команду возтановление в Linux
+А можно через команду в Linux
 
 al@al-VirtualBox:/home$ sudo sh -c "cd /var/lib/mysql; mysql clinic < clinic_1.sql"
 
