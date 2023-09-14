@@ -79,7 +79,14 @@ mysql> SELECT * FROM Doctor;
 ![image](https://github.com/tms-dos17-onl/Alex-Krylov/assets/139115675/22031bdb-4342-427d-8eea-aa6cffc969b2)
 
 6
+
+Можно через source
+
 mysql> source /var/lib/mysql/clinic_1.sql;
+
+А можно через команду возтановление в Linux
+
+al@al-VirtualBox:/home$ sudo sh -c "cd /var/lib/mysql; mysql clinic < clinic_1.sql"
 
 ![image](https://github.com/tms-dos17-onl/Alex-Krylov/assets/139115675/bf052652-1c1c-41b4-8ed2-fbde38b0b216)
 
