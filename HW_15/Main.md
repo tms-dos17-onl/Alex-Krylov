@@ -91,5 +91,16 @@ al@al-VirtualBox:/home$ sudo sh -c "cd /var/lib/mysql; mysql clinic < clinic_1.s
 ![image](https://github.com/tms-dos17-onl/Alex-Krylov/assets/139115675/bf052652-1c1c-41b4-8ed2-fbde38b0b216)
 
 7
-curl -fsSL https://www.mongodb.org/static/pgp/server-4.4.asc | sudo apt-key add -
-echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/4.4 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.4.list
+sudo apt-get install gnupg curl
+
+curl -fsSL https://pgp.mongodb.com/server-7.0.asc | \
+   sudo gpg -o /usr/share/keyrings/mongodb-server-7.0.gpg \
+   --dearmor
+   
+   echo "deb [ arch=amd64,arm64 signed-by=/usr/share/keyrings/mongodb-server-7.0.gpg ] https://repo.mongodb.org/apt/ubuntu jammy/mongodb-org/7.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-7.0.list
+   
+sudo apt-get update
+
+sudo apt-get install -y mongodb-org
+
+
