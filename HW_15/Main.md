@@ -10,7 +10,7 @@ al@al-VirtualBox:~$ sudo apt install mysql-server mysql-client
 
 ![image](https://github.com/tms-dos17-onl/Alex-Krylov/assets/139115675/45428d50-6c4a-4a80-8888-dd6ffa6cc683)
 
-4
+4. Создать бэкап базы данных clinic.
 
 al@al-VirtualBox:~$ sudo mysqldump -uroot -p******** clinic > /var/lib/mysql/clinic_1.sql
 
@@ -25,14 +25,16 @@ al@al-VirtualBox:~$ sudo ls /var/lib/mysql/
  binlog.000005	     binlog.000013   binlog.000021  '#ib_16384_0.dblwr'   mysql.ibd	       undo_001
  binlog.000006	     binlog.000014   binlog.index   '#ib_16384_1.dblwr'   performance_schema   undo_002
 ````
-5
--
+5. Написать следующие SQL запросы:
+- Вывести всех врачей, работающих в терапевтическом отделении
+- 
 ![image](https://github.com/tms-dos17-onl/Alex-Krylov/assets/139115675/2b44c9df-6c20-4b3d-8fed-503d7d55ad99)
--
+- Вывести в каких отделениях побывал каждый пациент.
 ![image](https://github.com/tms-dos17-onl/Alex-Krylov/assets/139115675/ee496ad0-e90a-4a87-8913-32e85508384d)
--
+- Обновить дату приёма для пациента Ивана Иванова на 2022-02-09.
 ![image](https://github.com/tms-dos17-onl/Alex-Krylov/assets/139115675/897321c8-9535-4ea6-a4c2-67bfc6bdde0a)
--
+- Удалить врача Андрея Быкова и все его приёмы.
+
 mysql> SET FOREIGN_KEY_CHECKS=0;
 ````
 Query OK, 0 rows affected (0.00 sec)
@@ -70,7 +72,7 @@ mysql> SELECT * FROM Doctor;
 +----+----------------+--------------------+---------------+-----------------------------+------------+
 5 rows in set (0.00 sec)
 ````
--
+- Добавить нового врача Фила Ричардса и новую пациентку Василису Васильеву и записать её к Филу Ричардсу на приём на 2022-02-14.
 ![image](https://github.com/tms-dos17-onl/Alex-Krylov/assets/139115675/d1782856-067f-47c8-b978-c3e8e45ed7dd)
 -
 ![image](https://github.com/tms-dos17-onl/Alex-Krylov/assets/139115675/faefa751-5f22-4b8f-be4e-d575f883ddc1)
@@ -78,7 +80,7 @@ mysql> SELECT * FROM Doctor;
 -
 ![image](https://github.com/tms-dos17-onl/Alex-Krylov/assets/139115675/22031bdb-4342-427d-8eea-aa6cffc969b2)
 
-6
+6. Восстановить базу данных clinic из бэкапа и проверить, что данные соответствуют состоянию базы данных до внесенных в предыдущем задании изменений.
 
 Можно через source
 
@@ -90,7 +92,7 @@ al@al-VirtualBox:/home$ sudo sh -c "cd /var/lib/mysql; mysql clinic < clinic_1.s
 
 ![image](https://github.com/tms-dos17-onl/Alex-Krylov/assets/139115675/bf052652-1c1c-41b4-8ed2-fbde38b0b216)
 
-7
+7. Установить MongoDB
 sudo apt-get install gnupg curl
 
 curl -fsSL https://pgp.mongodb.com/server-7.0.asc | \
@@ -102,7 +104,7 @@ curl -fsSL https://pgp.mongodb.com/server-7.0.asc | \
    sudo apt-get update
 
 sudo apt-get install -y mongodb-org
-8
+8. Создать БД clinic и наполнить её данными используя скрипты из https://github.com/tms-dos17-onl/_sandbox/tree/main/lecture18/mongo/initdb.d.
 
 clinic> db.appointment.updateOne({Date: "2022-01-08 00:00:00.000000"}, {$set: {Date : "2022-02-08 00:00:00.000000"}});
 ````
