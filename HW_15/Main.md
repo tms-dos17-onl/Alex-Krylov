@@ -104,4 +104,59 @@ curl -fsSL https://pgp.mongodb.com/server-7.0.asc | \
 sudo apt-get install -y mongodb-org
 8
 
+clinic> db.appointment.updateOne({Date: "2022-01-08 00:00:00.000000"}, {$set: {Date : "2022-02-08 00:00:00.000000"}});
+````
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+````
+clinic> db.appointment.find();
+````
+[
+  {
+    _id: ObjectId("650571cf4090417e03fcf6a7"),
+    id: 1,
+    Date: '2022-02-08 00:00:00.000000',
+    Room_id: 5,
+    Doctor_id: 1,
+    Patient_id: 5
+  },
+  {
+    _id: ObjectId("650571cf4090417e03fcf6a8"),
+    id: 2,
+    Date: '2022-01-09 00:00:00.000000',
+    Room_id: 1,
+    Doctor_id: 2,
+    Patient_id: 3
+  },
+  {
+    _id: ObjectId("650571cf4090417e03fcf6a9"),
+    id: 3,
+    Date: '2022-01-09 00:00:00.000000',
+    Room_id: 4,
+    Doctor_id: 3,
+    Patient_id: 1
+  },
+  {
+    _id: ObjectId("650571cf4090417e03fcf6aa"),
+    id: 4,
+    Date: '2022-02-01 00:00:00.000000',
+    Room_id: 3,
+    Doctor_id: 4,
+    Patient_id: 2
+  },
+  {
+    _id: ObjectId("650571cf4090417e03fcf6ab"),
+    id: 5,
+    Date: '2022-02-03 00:00:00.000000',
+    Room_id: 2,
+    Doctor_id: 5,
+    Patient_id: 4
+  }
+]
+````
 
