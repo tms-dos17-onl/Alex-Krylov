@@ -125,6 +125,7 @@ true
 
 9. Написать выборочно 3 запроса из задания 5 для MongoDB используя mongosh команды.
 
+Обновить дату приёма для пациента Ивана Иванова на 2022-02-08
 
 clinic> db.appointment.updateOne({Date: "2022-01-08 00:00:00.000000"}, {$set: {Date : "2022-02-08 00:00:00.000000"}});
 ````
@@ -181,6 +182,8 @@ clinic> db.appointment.find();
   }
 ]
 ````
+Удалить врача Андрея Быкова и все его приёмы
+
 clinic> db.doctor.deleteOne({ _id : ObjectId("650571cf4090417e03fcf694")});
 ````
 { acknowledged: true, deletedCount: 1 }
@@ -202,6 +205,8 @@ clinic> db.appointment.deleteOne({ _id : ObjectId("650571cf4090417e03fcf6a7")});
 ````
 { acknowledged: true, deletedCount: 1 }
 ````
+Добавить нового врача Фила Ричардса и новую пациентку Василису Васильеву и записать её к Филу Ричардсу на приём на 2022-02-14
+
 clinic> doctor = db.doctor.insertOne({ "id": 1, "Email": "phill.richards@clinic.com", "LastName": "Ричардс", "BirthDate": "1987-04-14", "FirstName": "Фил", "Telephone": "+37529XXXXXXX" });
 ````
 {
@@ -230,7 +235,7 @@ clinic> patient = db.patient.insertOne({ "id": 6, "Email": "vasilisa.vasileva@ex
   insertedId: ObjectId("650582384090417e03fcf6b2")
 }
 ````
-clinic> db.appointment.insertOne({ "id": 1, "Date": "2022-03-14 00:00:00.000000", "Room_id": 1, "Doctor_id": doctor.id, "Patient_id": patient.id });
+clinic> db.appointment.insertOne({ "id": 1, "Date": "2022-02-14 00:00:00.000000", "Room_id": 1, "Doctor_id": doctor.id, "Patient_id": patient.id });
 ````
 {
   acknowledged: true,
