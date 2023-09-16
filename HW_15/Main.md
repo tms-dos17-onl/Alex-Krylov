@@ -123,7 +123,9 @@ clinic> load("/home/alex777888/Downloads/_sandbox-main/lecture18/mongo/initdb.d/
 true
 ````
 
-9
+9. Написать выборочно 3 запроса из задания 5 для MongoDB используя mongosh команды.
+
+
 clinic> db.appointment.updateOne({Date: "2022-01-08 00:00:00.000000"}, {$set: {Date : "2022-02-08 00:00:00.000000"}});
 ````
 {
