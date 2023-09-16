@@ -106,6 +106,24 @@ curl -fsSL https://pgp.mongodb.com/server-7.0.asc | \
 sudo apt-get install -y mongodb-org
 8. Создать БД clinic и наполнить её данными используя скрипты из https://github.com/tms-dos17-onl/_sandbox/tree/main/lecture18/mongo/initdb.d.
 
+clinic> db.createCollection("patient");
+{ ok: 1 }
+clinic> db.createCollection("doctor");
+{ ok: 1 }
+clinic> db.createCollection("department");
+{ ok: 1 }
+clinic> db.createCollection("job");
+{ ok: 1 }
+clinic> db.createCollection("room");
+{ ok: 1 }
+clinic> db.createCollection("appointment");
+{ ok: 1 }
+clinic> load("/home/alex777888/Downloads/_sandbox-main/lecture18/mongo/initdb.d/data.js");
+````
+true
+````
+
+9
 clinic> db.appointment.updateOne({Date: "2022-01-08 00:00:00.000000"}, {$set: {Date : "2022-02-08 00:00:00.000000"}});
 ````
 {
