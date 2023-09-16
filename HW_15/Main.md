@@ -159,4 +159,59 @@ clinic> db.appointment.find();
   }
 ]
 ````
-
+clinic> db.doctor.deleteOne({ _id : ObjectId("650571cf4090417e03fcf694")});
+````
+{ acknowledged: true, deletedCount: 1 }
+````
+clinic> db.doctor.find();
+````
+[
+  {
+    _id: ObjectId("650571cf4090417e03fcf695"),
+    id: 2,
+    Email: 'ivan.kupitman@clinic.com',
+    LastName: 'Купитман',
+    BirthDate: '1963-03-13',
+    FirstName: 'Иван',
+    Telephone: '+37529XXXXXXX'
+  },
+````
+clinic> db.appointment.deleteOne({ _id : ObjectId("650571cf4090417e03fcf6a7")});
+````
+{ acknowledged: true, deletedCount: 1 }
+````
+clinic> doctor = db.doctor.insertOne({ "id": 1, "Email": "phill.richards@clinic.com", "LastName": "Ричардс", "BirthDate": "1987-04-14", "FirstName": "Фил", "Telephone": "+37529XXXXXXX" });
+````
+{
+    _id: ObjectId("650571cf4090417e03fcf699"),
+    id: 6,
+    Email: 'semen.lobanoff@clinic.com',
+    LastName: 'Лобанов',
+    BirthDate: '1983-11-22',
+    FirstName: 'Семён',
+    Telephone: '+37529XXXXXXX'
+  },
+  {
+    _id: ObjectId("6505818c4090417e03fcf6b1"),
+    id: 1,
+    Email: 'phill.richards@clinic.com',
+    LastName: 'Ричардс',
+    BirthDate: '1987-04-14',
+    FirstName: 'Фил',
+    Telephone: '+37529XXXXXXX'
+  }
+````
+clinic> patient = db.patient.insertOne({ "id": 6, "Email": "vasilisa.vasileva@example.com", "Address": "Тилимилитрямдия", "LastName": "Васильева", "BirthDate": "1990-08-16", "FirstName": "Василиса", "Telephone": "+37517XXXXXXX" });
+````
+{
+  acknowledged: true,
+  insertedId: ObjectId("650582384090417e03fcf6b2")
+}
+````
+clinic> db.appointment.insertOne({ "id": 1, "Date": "2022-03-14 00:00:00.000000", "Room_id": 1, "Doctor_id": doctor.id, "Patient_id": patient.id });
+````
+{
+  acknowledged: true,
+  insertedId: ObjectId("650582c74090417e03fcf6b3")
+}
+````
