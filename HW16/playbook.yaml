@@ -1,0 +1,61 @@
+  GNU nano 7.2                                     /etc/ansible/playbooc.yaml                                              
+---
+- name: playbook for HW_16
+  hosts: all
+  become: yes
+
+  tasks:
+
+  - name: Install Lamp Applications
+    become: yes
+    apt: name={{ item }} update_cache=yes state=latest
+    loop: [ 'apache2', 'mysql-server', 'php', 'libapache2-mod-php', 'php-mysql', 'python3-mysqldb' ]
+
+  - name: Change priority
+    become: yes
+    lineinfile: dest=/etc/apache2/mods-enabled/dir.conf
+                regexp='^DirectoryIndex'
+                insertbefore=BOF
+                line='DirectoryIndex index.php index.html index.cgi index.pl index.xhtml index.htm'
+
+  - name: Dowload SimleLamp
+    ansible.builtin.get_url:
+         url: https://github.com/qyjohn/simple-lamp/archive/refs/heads/master.zip
+         dest: /var/www/html
+         mode: '0777'
+
+  - name: Unarchive siple_lamp
+    unarchive:
+     src: /var/www/html/simple-lamp-master.zip
+     dest: /var/www/html/
+     remote_src: yes
+
+  - name: update mysql root password for all root
+    import_tasks: playbooc_mysql.yaml
+
+  - ansible.builtin.template:
+     src: /etc/ansible/config.j2
+     dest: /var/www/html/simple-lamp-master/config.php
+
+
+  - name: Change permissions
+    become: yes
+    shell:  "chmod 777 /var/www/html/simple-lamp-master/uploads"
+
+  - name: start-servises
+    service:
+         name: "{{ item }}"
+         state: started
+         enabled: yes
+    loop:
+         - apache2
+         - mysql
+
+  - name: restart-servises
+    service:
+          name: "{{ item }}"
+          state: started
+          enabled: yes
+    loop:
+          - apache2
+          - mysql
