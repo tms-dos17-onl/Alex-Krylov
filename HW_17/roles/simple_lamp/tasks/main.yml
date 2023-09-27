@@ -1,0 +1,30 @@
+---
+# tasks file for /etc/ansible/roles/simple_lamp
+- name: Dowload SimleLamp
+  ansible.builtin.get_url:
+     url: https://github.com/qyjohn/simple-lamp/archive/refs/heads/master.zip
+     dest: /var/www/html
+     mode: '0777'
+
+- name: Unarchive siple_lamp
+  unarchive:
+     src: /var/www/html/simple-lamp-master.zip
+     dest: /var/www/html/
+     remote_src: yes
+
+- name: insert simple data into database
+  mysql_db:
+       name: simple_lamp
+       state: import
+       target: /var/www/html/simple-lamp-master/simple_lamp.sql
+       login_user: root
+       login_password: "{{ mysql_root_password }}"
+
+- ansible.builtin.template:
+     src: config.j2
+     dest: /var/www/html/simple-lamp-master/config.php
+
+- name: Change permissions
+  become: yes
+  shell:  "chmod 777 /var/www/html/simple-lamp-master/uploads"
+

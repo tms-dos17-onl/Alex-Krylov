@@ -1,0 +1,5 @@
+---
+# defaults file for /etc/ansible/roles/simple_lamp
+mysql_root_password: qwertyasdfg
+host: localhost
+user: root
