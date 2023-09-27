@@ -1,0 +1,19 @@
+---
+# handlers file for /etc/ansible/roles/simple_lamp
+- name: start-servises
+  service:
+         name: "{{ item }}"
+         state: started
+         enabled: yes
+  loop:
+         - apache2
+         - mysql
+
+- name: restart-servises
+  service:
+          name: "{{ item }}"
+          state: started
+          enabled: yes
+  loop:
+          - apache2
+          - mysql

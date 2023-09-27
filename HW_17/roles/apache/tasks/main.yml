@@ -1,0 +1,5 @@
+---
+# tasks file for /etc/ansible/roles/apache
+- name: Install Apache
+  become: yes
+  apt: name=apache2  update_cache=yes state=latest
