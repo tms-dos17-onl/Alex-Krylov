@@ -1,3 +1,0 @@
----
-# defaults file for /etc/ansible/roles/myqal
-mysql_root_password: qwertyasdfg
