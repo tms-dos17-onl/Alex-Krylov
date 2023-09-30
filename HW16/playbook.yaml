@@ -1,4 +1,5 @@
-  GNU nano 7.2                                     /etc/ansible/playbooc.yaml                                              
+  GNU nano 7.2                                     /etc/ansible/playbooc.yaml
+
 ---
 - name: playbook for HW_16
   hosts: all
