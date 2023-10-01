@@ -5,3 +5,5 @@
 ![image](https://github.com/tms-dos17-onl/Alex-Krylov/assets/139115675/556d0605-b5e4-47df-b938-a9c139d3d75e)
 
 ![image](https://github.com/tms-dos17-onl/Alex-Krylov/assets/139115675/9cdf8219-93b0-4352-8981-34211d678d81)
+
+![image](https://github.com/tms-dos17-onl/Alex-Krylov/assets/139115675/7db686c3-e23a-4825-895d-3ea7d4d54aa8)
