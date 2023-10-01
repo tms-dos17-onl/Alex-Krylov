@@ -1,0 +1,8 @@
+  GNU nano 7.2                         /etc/ansible/playbook_roles.yaml                                   
+- hosts: all
+  become: yes
+  roles:
+    - geerlingguy.apache
+    - geerlingguy.mysql
+    - geerlingguy.php
+    - simple_lamp
