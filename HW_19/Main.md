@@ -63,3 +63,70 @@ PING 172.17.0.2 (172.17.0.2) 56(84) bytes of data.
 6 packets transmitted, 6 received, 0% packet loss, time 5204ms
 rtt min/avg/max/mdev = 0.037/0.057/0.076/0.013 ms
 ````
+3
+
+alex77@DESKTOP-DF0R6BK:~$ docker volume create Hw_MarDB
+````
+Hw_MarDB
+````
+alex77@DESKTOP-DF0R6BK:~$ docker volume ls
+````
+DRIVER    VOLUME NAME
+local     Hw_MarDB
+````
+alex77@DESKTOP-DF0R6BK:~$ docker volume inspect Hw_MarDB
+````
+[
+    {
+        "CreatedAt": "2023-10-02T12:42:45Z",
+        "Driver": "local",
+        "Labels": null,
+        "Mountpoint": "/var/lib/docker/volumes/Hw_MarDB/_data",
+        "Name": "Hw_MarDB",
+        "Options": null,
+        "Scope": "local"
+    }
+]
+````
+alex77@DESKTOP-DF0R6BK:~$ docker run -d --name mariadb1 -e MYSQL_ROOT_PASSWORD=1234567 -v Hw_MarDB:/var/lib/mysql mariadb:11.0
+````
+Unable to find image 'mariadb:11.0' locally
+11.0: Pulling from library/mariadb
+44ba2882f8eb: Pull complete
+08b8223d0cb6: Pull complete
+ef2696fb09d6: Pull complete
+6ae32c298a0d: Pull complete
+737007b25ac8: Pull complete
+0dbe827889a7: Pull complete
+c66389b6a4b9: Pull complete
+a0724dc11b95: Pull complete
+Digest: sha256:e3f4b8528cd0e11024d33873a842f6e8818dcaace49a19970bea91299048594f
+Status: Downloaded newer image for mariadb:11.0
+89b8b7695e4a1ed246f1022d8a37c7f0f2b1fd2a47d53878687e3c180523b2be
+````
+- Запустить интерактивную сессию Bash в запущенном контейнере при помощи docker exec
+alex77@DESKTOP-DF0R6BK:~$ docker exec -it mariadb1 bash
+
+root@89b8b7695e4a:/# mariadb -u root -p
+````
+Enter password:
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 3
+Server version: 11.0.3-MariaDB-1:11.0.3+maria~ubu2204 mariadb.org binary distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+````
+- Проверить версию MariaDB через SQL запрос.
+
+MariaDB [(none)]> select version();
+````
++---------------------------------------+
+| version()                             |
++---------------------------------------+
+| 11.0.3-MariaDB-1:11.0.3+maria~ubu2204 |
++---------------------------------------+
+1 row in set (0.000 sec)
+````
+
