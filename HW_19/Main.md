@@ -7,3 +7,59 @@
 ![image](https://github.com/tms-dos17-onl/Alex-Krylov/assets/139115675/9cdf8219-93b0-4352-8981-34211d678d81)
 
 ![image](https://github.com/tms-dos17-onl/Alex-Krylov/assets/139115675/7db686c3-e23a-4825-895d-3ea7d4d54aa8)
+
+2. Запустить 2 Docker контейнера (например, Docker Getting Started и netshoot) с настройками сети по умолчанию и проверить есть ли между ними соединение.
+
+alex77@DESKTOP-DF0R6BK:~$ docker ps
+````
+CONTAINER ID   IMAGE                    COMMAND                  CREATED         STATUS         PORTS                NAMES
+30185d033fcd   nicolaka/netshoot        "zsh"                    2 minutes ago   Up 2 minutes                        elated_montalcini
+70c330c7b7c0   docker/getting-started   "/docker-entrypoint.…"   9 minutes ago   Up 9 minutes   0.0.0.0:80->80/tcp   epic_wescoff
+````
+alex77@DESKTOP-DF0R6BK:~$ docker inspect 70c330c7b7c0
+````
+ "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": null,
+                    "NetworkID": "6aa7444d07a99226d521506857793077f7905fe86687c458d7dbfc924dbe840a",
+                    "EndpointID": "d90f139d83584f50ff67c44775c61dc7f8d6a6b24ff7bc256289f558aed4e8f8",
+                    "Gateway": "172.17.0.1",
+                    "IPAddress": "172.17.0.2",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "MacAddress": "02:42:ac:11:00:02",
+                    "DriverOpts": null
+````
+
+alex77@DESKTOP-DF0R6BK:~$ docker run -it --net host nicolaka/netshoot
+````
+                    dP            dP                           dP
+                    88            88                           88
+88d888b. .d8888b. d8888P .d8888b. 88d888b. .d8888b. .d8888b. d8888P
+88'  `88 88ooood8   88   Y8ooooo. 88'  `88 88'  `88 88'  `88   88
+88    88 88.  ...   88         88 88    88 88.  .88 88.  .88   88
+dP    dP `88888P'   dP   `88888P' dP    dP `88888P' `88888P'   dP
+
+Welcome to Netshoot! (github.com/nicolaka/netshoot)
+Version: 0.11
+````
+ docker-desktop  ~  hostname -i
+ ````
+192.168.65.4
+````
+ docker-desktop  ~  ping 172.17.0.2
+ ````
+PING 172.17.0.2 (172.17.0.2) 56(84) bytes of data.
+64 bytes from 172.17.0.2: icmp_seq=1 ttl=64 time=0.058 ms
+64 bytes from 172.17.0.2: icmp_seq=2 ttl=64 time=0.076 ms
+64 bytes from 172.17.0.2: icmp_seq=3 ttl=64 time=0.053 ms
+64 bytes from 172.17.0.2: icmp_seq=4 ttl=64 time=0.037 ms
+64 bytes from 172.17.0.2: icmp_seq=5 ttl=64 time=0.073 ms
+64 bytes from 172.17.0.2: icmp_seq=6 ttl=64 time=0.046 ms
+^C
+--- 172.17.0.2 ping statistics ---
+6 packets transmitted, 6 received, 0% packet loss, time 5204ms
+rtt min/avg/max/mdev = 0.037/0.057/0.076/0.013 ms
+````
