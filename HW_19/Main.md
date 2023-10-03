@@ -129,4 +129,57 @@ MariaDB [(none)]> select version();
 +---------------------------------------+
 1 row in set (0.000 sec)
 ````
+- Создать БД, таблицу и запись.
+- 
+MariaDB [lol]> SELECT * FROM homework;
+````
++----+--------+------+------------+
+| id | people | name | date       |
++----+--------+------+------------+
+|  1 | man    | bob  | 2023-07-15 |
++----+--------+------+------------+
+1 row in set (0.048 sec)
+````
+- Выполнить апгрейд MariaDB путем подмены версии используемого Docker образа на 11.1.2.
 
+docker run -d --name mariadb1 -e MYSQL_ROOT_PASSWORD=1234567 -v Hw_MarDB:/var/lib/mysql mariadb:11.1.2 
+
+- Проверить, что версия MariaDB поменялась.
+
+alex77@DESKTOP-DF0R6BK:~$ docker ps
+````
+CONTAINER ID   IMAGE            COMMAND                  CREATED         STATUS         PORTS      NAMES
+6a9563625515   mariadb:11.1.2   "docker-entrypoint.s…"   3 minutes ago   Up 3 minutes   3306/tcp   mariadb1
+````
+
+- Проверить, что данные остались.
+
+alex77@DESKTOP-DF0R6BK:~$ docker exec -it mariadb1 bash
+
+root@38be863b7e17:/# mariadb -u root -p
+Enter password:
+````
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 3
+Server version: 11.1.2-MariaDB-1:11.1.2+maria~ubu2204 mariadb.org binary distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+````
+MariaDB [(none)]> use lol;
+````
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+````
+MariaDB [lol]> SELECT * FROM homework;
+````
++----+--------+------+------------+
+| id | people | name | date       |
++----+--------+------+------------+
+|  1 | man    | bob  | 2023-07-15 |
++----+--------+------+------------+
+1 row in set (0.019 sec)
+````
