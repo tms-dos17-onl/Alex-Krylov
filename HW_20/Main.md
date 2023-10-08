@@ -5,7 +5,8 @@
 ![image](https://github.com/tms-dos17-onl/Alex-Krylov/assets/139115675/a0aafb8d-5d34-4076-9016-0c5c46363a8e)
 
 2. Написать Dockerfile для LAMP приложения, который устанавливает весь LAMP стек в один образ. Подсказка: для того, чтобы в Docker контейнере запускались службы, нужно установить systemd и задать его как ENTRYPOINT, а также запускать контейнер в привилегированном режиме. Например, как тут.
-Dockerfile
+
+- Dockerfile
 ````
 FROM ubuntu:23.04
 
