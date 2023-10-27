@@ -15,7 +15,6 @@ for j in m:              #  Беру арумент,разделенный ".", 
  
 mask_bits = '1' * m2 + '0'* (32 - m2) #                  Делаю логическое And и получаю маску подсети
 mask_octets = [int(mask_bits[i:i + 8], base=2) for i in range(0, 32, 8)] #
-print(mask_bits,mask_octets)
 
 num=0                        #
 mask_1=0
