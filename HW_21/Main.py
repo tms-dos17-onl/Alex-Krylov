@@ -1,17 +1,19 @@
 import argparse
 parser = argparse.ArgumentParser(description=' ')
-parser.add_argument('--cidr-mask', type=int, help=' ')
+parser.add_argument('--cidr-mask', type=str, help=' ')
 parser.add_argument('--ip', help=' ')
 n = parser.parse_args()
 
 ip_2=''              #
 m=n.ip.split('.')    #
+m1=n.cidr_mask.split('/')
+m2=int(m1[1])
 firs_octet=m[0]       #
 for j in m:              #  Беру арумент,разделенный ".", задаю цикл,перевожу в 2-ый вид,добовляю в новую строку
  f=bin(int(j))[2:].zfill(8)  #
  ip_2+=f                     #
  
-mask_bits = '1' * n.cidr_mask + '0'* (32 - n.cidr_mask) #                  Делаю логическое And и получаю маску подсети
+mask_bits = '1' * m2 + '0'* (32 - m2) #                  Делаю логическое And и получаю маску подсети
 mask_octets = [int(mask_bits[i:i + 8], base=2) for i in range(0, 32, 8)] #
 print(mask_bits,mask_octets)
 
