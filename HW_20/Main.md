@@ -42,7 +42,10 @@ RUN apt-get update && apt-get install -y \
 ````
 ![image](https://github.com/tms-dos17-onl/Alex-Krylov/assets/139115675/08961fd6-afe8-482d-a0bd-5ce3e2cda1cf)
 
-
+3.Написать Dockerfile для LAMP приложения, который устанавливает только само приложение в Apache. Написать docker-compose.yaml, который разворачивает зависимости приложения (MySQL и Memcached) и запускает само приложение. Обратить внимание на /docker-entrypoint-initdb.d mount для MySQL, использование которого описано в документации к MySQL Docker образу. Посмотреть, что такое wait-for-it.sh и придумать, как его можно заиспользовать в этом задании.
+![image](https://github.com/tms-dos17-onl/Alex-Krylov/assets/139115675/2ad83859-6e48-4aa5-ac62-8d1d587db180)
+-
+![image](https://github.com/tms-dos17-onl/Alex-Krylov/assets/139115675/e4739129-f2c0-4f24-a759-007bd7851960)
 
 
 
