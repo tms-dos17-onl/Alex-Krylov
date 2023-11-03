@@ -1,0 +1,32 @@
+version: '3.8'
+services:
+
+  php_apache:
+   build: ./test
+   ports:
+    - 8081:80
+   volumes:
+    - ./simple-lamp/:/var/www/html/simple-lamp
+   
+
+ 
+  db:
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456
+      MYSQL_USER: al
+      MYSQL_PASSWORD: 12345
+      MYSQL_DATABASE: simple_lamp
+    ports:
+     - '3306:3306'
+    volumes:
+      - "./simple-lamp/simple_lamp.sql:/docker-entrypoint-initdb.d/simple_lamp.sql"
+     
+    
+    
+
+
+
+
+
