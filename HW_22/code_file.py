@@ -9,7 +9,7 @@ parser.add_argument('--out-format', help=' ')
 n = parser.parse_args()
 
 if n.in_format =='xml':
-    with open('test_format.xml','r') as xml_file:
+    with open(n.in_file,'r') as xml_file:
      xml_data=xml_file.read()
      data_dict = xmltodict.parse(xml_data)
      if n.out_format == 'json':
@@ -22,7 +22,7 @@ if n.in_format =='xml':
         print(xml_data) 
       
 elif n.in_format=='json':
-     with open('test_format.json','r') as json_file:
+     with open(n.in_file,'r') as json_file:
         json_data=json_file.read()
         json_dict=json.loads(json_data)
         if n.out_format == 'xml':
@@ -35,7 +35,7 @@ elif n.in_format=='json':
          print(json_data)   
             
 elif n.in_format == 'yaml':
-      with open('test_format.yaml','r') as yaml_file:
+      with open(n.in_file,'r') as yaml_file:
          yaml_data=yaml_file.read()
          yaml_dict=yaml.load(yaml_data,Loader=yaml.FullLoader)
          if n.out_format == 'xml':
