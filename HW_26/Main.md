@@ -16,6 +16,9 @@ pipeline {
     agent {
         label 'linux'
     }
+    triggers {
+        cron('H * * * *')
+    }
     
     stages {
         stage('Clone') {
@@ -25,6 +28,7 @@ pipeline {
                 }
             }
         }
+        
         stage('Build') {
             steps {
                 sh '''
@@ -34,14 +38,17 @@ pipeline {
                 '''
             }
         }
+        
         stage('Publish') {
             steps {
-                
                 archiveArtifacts artifacts: 'target/*.jar', fingerprint: true
                 junit 'target/surefire-reports/*.xml'
             }
         }
     }
 }
+
 ````
 ![image](https://github.com/tms-dos17-onl/Alex-Krylov/assets/139115675/dfa5f56c-382e-4c71-816c-d7f1a77f32d9)
+4 Настроить сборку по расписанию (каждый час) при помощи блока triggers в Jenkinsfile.
+![image](https://github.com/tms-dos17-onl/Alex-Krylov/assets/139115675/6f30cda5-c152-4a69-b9b5-afb6cbd58028)
