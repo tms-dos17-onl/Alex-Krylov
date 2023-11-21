@@ -37,8 +37,8 @@ jobs:
           
       - name: Build
         run: |
-           cd spring-petclinic
-           ./mvnw package
+           
+           spring-petclinic/mvnw package -f spring-petclinic/pom.xml
           
 
           
