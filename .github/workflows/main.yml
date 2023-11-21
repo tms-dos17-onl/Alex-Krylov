@@ -9,5 +9,7 @@ jobs:
     steps:
       - name: Print
         run: ls
+      - name: Who
+        run: pwd
 
      
