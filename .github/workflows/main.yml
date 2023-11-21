@@ -36,10 +36,9 @@ jobs:
       
       - name: Build
         run: |
-          java -version
+          sudo chmod 777 spring-petclinic
           cd spring-petclinic
-          ./mvnw -version
-          sudo ./mvnw package
+          ./mvnw package
           
 
           
