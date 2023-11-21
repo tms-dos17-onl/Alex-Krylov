@@ -1,12 +1,13 @@
-name: My_pipline
-on :
+name: My_pipeline
+on:
   push:
-   branches:
-      -main
+    branches:
+      - main
 jobs:
- my_test:
-   runs-on: ubuntu-latast
-   steps:
-   - name: Print
-     run: sh 'pwd', sh 'ls'
+  my_test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print
+        run: sh 'pwd'
+
      
