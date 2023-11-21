@@ -8,7 +8,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: jdk
-        run: sudo apt install openjdk-17-jdk openjdk-17-jre
+        run: |
+            sudo apt install openjdk-17-jdk openjdk-17-jre
+            ls
       
       - name: Clone repository
         env:
