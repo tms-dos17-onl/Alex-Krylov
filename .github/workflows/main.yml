@@ -14,7 +14,7 @@ jobs:
         env:
           SECRET_CLON: ${{ secrets.SECRET_CLON }}
         run: |
-          git --version
+          java -version
           git config --global credential.helper store
           git clone https://${SECRET_CLON}@github.com/tms-dos17-onl/spring-petclinic.git
           cd spring-petclinic
