@@ -9,7 +9,8 @@ jobs:
     steps:
       - name: Print
         run: |
-          git clone https://github.com/tms-dos17-onl/spring-petclinic.git
+          git --version
+          git config user.name 'MyUsername'
            
      
      
