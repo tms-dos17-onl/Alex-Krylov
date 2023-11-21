@@ -9,9 +9,7 @@ jobs:
     steps:
       - name: Print
         run: |
-           mkdir file
-           ls
-           cd file
-           pwd
+          git clone https://github.com/tms-dos17-onl/spring-petclinic.git
+           
      
      
