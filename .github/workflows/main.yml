@@ -8,8 +8,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Print
-        run: ls
-      - name: Who
-        run: pwd
-
+        run: |
+           pwd
+           ls
+     
      
