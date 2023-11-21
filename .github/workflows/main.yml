@@ -7,6 +7,9 @@ jobs:
   my_test:
     runs-on: ubuntu-latest
     steps:
+      - name: jdk
+        run: apt install openjdk-17-jdk openjdk-17-jre
+      
       - name: Clone repository
         env:
           SECRET_CLON: ${{ secrets.SECRET_CLON }}
