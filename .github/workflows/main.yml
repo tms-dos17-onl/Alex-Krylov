@@ -7,11 +7,11 @@ jobs:
   my_test:
     runs-on: ubuntu-latest
     steps:
-      - name: jdk
-        run: |
-           
-            java -version
-      
+      - name: Use Java 17
+        uses: actions/setup-java@v2
+        with:
+          java-version: '17'
+
       - name: Clone repository
         env:
           SECRET_CLON: ${{ secrets.SECRET_CLON }}
@@ -22,5 +22,6 @@ jobs:
           cd spring-petclinic
           ./mvnw package
           ls
+
           
 
