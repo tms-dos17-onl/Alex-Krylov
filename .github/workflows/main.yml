@@ -12,7 +12,7 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.class }}
         run: |
           git --version
-          git clone https://github.com/tms-dos17-onl/spring-petclinic.git
+          git clone https://github.com/Alex777888777/spring-petclinic.git
           ls
            
      
