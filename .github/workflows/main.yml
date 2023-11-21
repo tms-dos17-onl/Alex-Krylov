@@ -8,6 +8,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Print
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.class }}
         run: |
           git --version
           git clone https://github.com/spring-projects/spring-petclinic.git
