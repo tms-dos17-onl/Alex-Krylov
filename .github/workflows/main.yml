@@ -9,7 +9,9 @@ jobs:
     steps:
       - name: Print
         run: |
-           pwd
+           touch file
            ls
+           cd file
+           pwd
      
      
