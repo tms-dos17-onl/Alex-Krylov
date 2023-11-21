@@ -38,6 +38,7 @@ jobs:
         run: |
           java -version
           cd spring-petclinic
+          ./mvnw -version
           sudo ./mvnw package
           
 
