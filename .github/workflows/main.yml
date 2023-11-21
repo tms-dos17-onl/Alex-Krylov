@@ -39,7 +39,7 @@ jobs:
       - name: Build
         run: |
           cd spring-petclinic
-          ./mvnw package
+          sudo ./mvnw package
           
 
           
