@@ -5,7 +5,7 @@ on:
       - main
 jobs:
   my_test:
-    runs-on: openjdk:17-alpine
+    runs-on: ubuntu-latest
     steps:
       - name: jdk
         run: |
