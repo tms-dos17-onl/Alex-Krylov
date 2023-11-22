@@ -1,0 +1,11 @@
+name: My_pipeline
+on:
+  push:
+    branches:
+      - main
+jobs:
+  my_test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Use Java 17
+        run : docker version
