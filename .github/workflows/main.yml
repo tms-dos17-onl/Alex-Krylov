@@ -26,6 +26,18 @@ jobs:
           docker run hello-world
           sudo chmod 777 spring-petclinic
           cd spring-petclinic
+          echo '
+            <plugin>
+              <groupId>org.apache.maven.plugins</groupId>
+              <artifactId>maven-surefire-plugin</artifactId>
+              <version>${maven-surefire-plugin.version}</version>
+              <configuration>
+                <!-- Force alphabetical order to have a reproducible build -->
+                <runOrder>alphabetical</runOrder>
+                <useSystemClassLoader>false</useSystemClassLoader>
+              </configuration>
+            </plugin>
+          ' >> pom.xml
           
           ./mvnw package
         
