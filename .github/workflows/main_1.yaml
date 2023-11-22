@@ -10,5 +10,5 @@ jobs:
       - name: Use 
         run :  |
           docker version
-          whoiam
+          whoami
           docker ps
