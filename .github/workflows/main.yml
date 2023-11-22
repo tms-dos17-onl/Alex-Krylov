@@ -38,7 +38,9 @@ jobs:
         run: |
           sudo chmod 777 spring-petclinic
           cd spring-petclinic
+          
           ./mvnw package
+        
           
 
           
