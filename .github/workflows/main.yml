@@ -24,7 +24,7 @@ jobs:
         run: |
           docker version
           docker run hello-world
-          sudo chmod 777 spring-petclinic
+          sudo chmod -R 777 spring-petclinic
           cd spring-petclinic
           ./mvnw package
         
