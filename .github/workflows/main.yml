@@ -6,20 +6,17 @@ on:
 jobs:
   my_test:
     runs-on: ubuntu-latest
+    container: openjdk:17
     steps:
-      - name: Use Java 17
-        uses: actions/setup-java@v2
-        with:
-          java-version: '17'
-          distribution: 'adopt'
+     
       
-      - name: Clone repository
-        env:
-          SECRET_CLON: ${{ secrets.SECRET_CLON }}
-        run: |
-          
-          git config --global credential.helper store
-          git clone https://${SECRET_CLON}@github.com/tms-dos17-onl/spring-petclinic.git
+     
+      - name: Check out my other private repo
+        uses: actions/checkout@master
+        with:
+          repository: tms-dos17-onl/spring-petclinic
+          token: ${{ SECRET_CLON }}
+        
 
   
       
