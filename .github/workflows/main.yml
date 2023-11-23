@@ -27,18 +27,11 @@ jobs:
 
     - name: Build with Maven
       run: |
-
+        
+        docker -version
         ./mvnw -B package
 
-    - name: Build Docker Image
-      run: |
-        docker build -t my-image .
-
-    - name: Push Docker Image
-      run: |
-        docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
-        docker tag my-image my-repository:latest
-        docker push my-repository:latest
+ 
 
           
 
