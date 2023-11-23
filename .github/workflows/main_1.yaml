@@ -1,4 +1,4 @@
-name: My_pipeline
+name: My_pipeline2
 on:
   push:
     branches:
