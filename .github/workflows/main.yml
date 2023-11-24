@@ -25,7 +25,7 @@ jobs:
           
       - name: Run Maven build inside Docker container
         run: |
-          ls -la
+          pwd
           docker run --rm -v "$(pwd)":/usr/src/mymaven maven mvn clean install    
 
          
