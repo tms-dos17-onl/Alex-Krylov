@@ -5,7 +5,10 @@ on:
       - main
 jobs:
   my_test:
-    runs-on: ubuntu-Docker
+    runs-on: ubuntu-latest
+    container:
+      image: docker:latest
+
     steps:
       - name: Use 
         run :  |
