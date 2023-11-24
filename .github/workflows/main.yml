@@ -16,8 +16,10 @@ jobs:
       
       - name: Build Docker 
         run: |
+          cd ..
           pwd
           ls
+          chmod -R 777 Alex-Krylov
           docker build -t maven - <<EOF
           FROM maven:3.8.4-openjdk-17
           WORKDIR /tmp
