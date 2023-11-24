@@ -16,16 +16,16 @@ jobs:
       
       - name: Build Docker 
         run: |
-          ls -la
-          docker version
-          docker build -t maven - <<EOF
-          FROM maven:3.8.4-openjdk-17
+         ls -la
+           docker version
+           docker build -t maven - <<EOF
+           FROM maven:3.8.4-openjdk-17
+           WORKDIR /usr/src/mymaven
+           COPY . /usr/src/mymaven
+           RUN ./mvnw package
+           RUN ./mvnw test
+           EOF
           
-          EOF
-          
-      - name: Run Maven build inside Docker container
-        run: |
-          pwd
-          docker run --rm -v "$(pwd)":/usr/src/mymaven -w /usr/src/mymaven maven mvn clean install    
+    
 
          
