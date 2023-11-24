@@ -23,9 +23,9 @@ jobs:
           WORKDIR /tmp
           # Adjust the path to copy the necessary content
           COPY . /tmp/Alex-Krylov
-          RUN ls /tmp/Alex-Krylov
-          RUN pwd && ls
-          RUN /tmp/Alex-Krylov/mvnw package && /tmp/Alex-Krylov/mvnw test
+          WORKDIR /tmp/Alex-Krylov
+          RUN ls -la   # Проверяем, что файл mvnw присутствует
+          RUN ./mvnw package && ./mvnw test
           EOF
 
 
