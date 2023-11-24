@@ -8,6 +8,8 @@ on:
 jobs:
   docker_build:
     runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.SECRET_CLON }}
     
     steps:
       - name: Checkout code
@@ -18,15 +20,15 @@ jobs:
 
       - name: Build Docker 
         run: |
-          docker build -t maven - <<EOF
+          docker build --build-arg GITHUB_TOKEN=${GITHUB_TOKEN} -t maven - <<EOF
           FROM maven:3.8.4-openjdk-17
           
-          RUN git clone https://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@github.com/tms-dos17-onl/spring-petclinic.git
+          RUN git clone https://$GITHUB_TOKEN@github.com/tms-dos17-onl/spring-petclinic.git
           WORKDIR /spring-petclinic
           RUN ./mvnw -B package
           EOF
         
-      - name: Run Maven build inside Docker container
+      - name: Run Maven 
         run: |
           docker run -it --rm maven mvn clean install
 
