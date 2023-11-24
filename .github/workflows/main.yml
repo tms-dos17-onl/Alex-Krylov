@@ -1,6 +1,9 @@
 name: Pipeline
 
 on:
+name: Pipeline
+
+on:
   push:
     branches:
       - main
@@ -9,7 +12,7 @@ jobs:
   docker_build:
     runs-on: ubuntu-latest
     env:
-      GITHUB_TOKEN: ${{ secrets.SECRET_CLON }}
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     
     steps:
       - name: Checkout code
@@ -23,12 +26,13 @@ jobs:
           docker build --build-arg GITHUB_TOKEN=${GITHUB_TOKEN} -t maven - <<EOF
           FROM maven:3.8.4-openjdk-17
           
-          RUN git clone https://$GITHUB_TOKEN@github.com/tms-dos17-onl/spring-petclinic.git
+          RUN apt-get update && apt-get install -y git
+          RUN git clone https://\${GITHUB_TOKEN}@github.com/tms-dos17-onl/spring-petclinic.git /spring-petclinic
           WORKDIR /spring-petclinic
           RUN ./mvnw -B package
           EOF
         
-      - name: Run Maven 
+      - name: Run Maven build inside Docker container
         run: |
           docker run -it --rm maven mvn clean install
 
