@@ -23,7 +23,7 @@ jobs:
           
           ls -la
           cd spring-petclinic
-          ./mvnw package
+          ./mvnw -B package
         
 
  
