@@ -23,12 +23,7 @@ jobs:
         run: |
           apt-get update
           apt-get install -y openjdk-17-jdk openjdk-17-jre maven
-
-      - name: Check Java and Maven versions
-        run: |
           java -version
           mvn -version
-
-      - name: List directory contents
-        run: ls -la
+          ls -la
 
