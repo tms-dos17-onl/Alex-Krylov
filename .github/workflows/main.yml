@@ -22,12 +22,8 @@ jobs:
           chmod -R 777 Alex-Krylov
           docker build -t maven - <<EOF
           FROM maven:3.8.4-openjdk-17
+          ADD . /tmp
           WORKDIR /tmp
-          # Adjust the path to copy the necessary content
-          COPY . /tmp
-          RUN ls /hsperfdata_root
-          WORKDIR /tmp
-          RUN ls -la   # Проверяем, что файл mvnw присутствует
           RUN ./mvnw package && ./mvnw test
           EOF
 
