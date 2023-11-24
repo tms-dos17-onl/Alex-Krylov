@@ -17,7 +17,7 @@ jobs:
       - name: Build Docker 
         run: |
           pwd
-          ls -l /usr/src/mymaven
+         
           docker build -t maven - <<EOF
           FROM maven:3.8.4-openjdk-17
           WORKDIR /home/runner/work/Alex-Krylov/Alex-Krylov      
