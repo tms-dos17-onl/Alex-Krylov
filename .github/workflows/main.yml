@@ -17,7 +17,7 @@ jobs:
       - name: Build Docker 
         run: |
           pwd
-          RUN ls -l /usr/src/mymaven
+          ls -l /usr/src/mymaven
           docker build -t maven - <<EOF
           FROM maven:3.8.4-openjdk-17
           COPY . /usr/src/mymaven
