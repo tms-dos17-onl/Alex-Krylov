@@ -22,9 +22,7 @@ jobs:
           FROM maven:3.8.4-openjdk-17
           COPY . /usr/src/mymaven
           WORKDIR /usr/src/mymaven      
-          RUN ./mvnw package && ./mvnw test
+          RUN /home/runner/work/Alex-Krylov/Alex-Krylov/mvnw package && /home/runner/work/Alex-Krylov/Alex-Krylov/mvnw test
           EOF
-
-    
 
          
