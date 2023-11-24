@@ -18,13 +18,13 @@ jobs:
 
       - name: Build Docker 
         run: |
-          docker build --build-arg GH_PAT=${{ secrets.SECRET }} -t maven - <<EOF
+          docker build --build-arg GH_PAT="${{ secrets.GH_PAT }}" -t maven - <<EOF
           FROM maven:3.8.4-openjdk-17
           
           ARG GH_PAT
           ENV GH_PAT=$GH_PAT
 
-          RUN git clone https://GH_PAT@github.com/tms-dos17-onl/spring-petclinic.git /spring-petclinic
+          RUN git clone https://${GH_PAT}@github.com/tms-dos17-onl/spring-petclinic.git /spring-petclinic
           WORKDIR /spring-petclinic
           RUN ./mvnw -B package
           EOF
