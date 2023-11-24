@@ -20,7 +20,7 @@ jobs:
           FROM maven:3.8.4-openjdk-17
           WORKDIR /tmp
           COPY . /tmp
-          ls /tmp
+          RUN ls /tmp
           RUN pwd && ls
           RUN /tmp/mvnw package && /tmp/mvnw test
           EOF
