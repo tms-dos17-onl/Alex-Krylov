@@ -10,12 +10,12 @@ jobs:
       image: maven:3.8.3-openjdk-17
     steps:
      
-      - name: Clone repository
-        env:
-          SECRET_CLON: ${{ secrets.SECRET }}
-        run: |
-          git config --global credential.helper store
-          git clone https://${SECRET}@github.com/tms-dos17-onl/spring-petclinic.git
+      - name: Check 
+        uses: actions/checkout@v2
+        with:
+          repository: tms-dos17-onl/spring-petclinic
+          token: ${{ secrets.SECRET }}
+          fetch-depth: 0  
       
       - name: Build Docker 
         run: |
