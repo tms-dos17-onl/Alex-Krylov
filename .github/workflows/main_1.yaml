@@ -20,5 +20,4 @@ jobs:
          run :  |
           docker version
           whoami
-          
           java -version
