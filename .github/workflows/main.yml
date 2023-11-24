@@ -20,8 +20,8 @@ jobs:
           docker version
           docker build -t maven - <<EOF
           FROM maven:3.8.4-openjdk-17
-          WORKDIR /usr/src/mymaven
           COPY . /usr/src/mymaven
+          WORKDIR /usr/src/mymaven      
           RUN ./mvnw package && ./mvnw test
           EOF
 
