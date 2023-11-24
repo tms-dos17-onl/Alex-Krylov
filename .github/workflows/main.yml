@@ -21,7 +21,7 @@ jobs:
           WORKDIR /tmp
           COPY . /tmp
           RUN pwd && ls
-          RUN ./mvnw package && ./mvnw test
+          RUN /tmp/mvnw package && tmp/mvnw test
           EOF
 
          
