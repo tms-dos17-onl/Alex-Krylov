@@ -23,7 +23,7 @@ jobs:
           docker build --build-arg GITHUB_TOKEN=${GITHUB_TOKEN} -t maven - <<EOF
           FROM maven:3.8.4-openjdk-17
           
-          RUN apt-get update && apt-get install -y git
+         
           RUN git clone https://\${GITHUB_TOKEN}@github.com/tms-dos17-onl/spring-petclinic.git /spring-petclinic
           WORKDIR /spring-petclinic
           RUN ./mvnw -B package
