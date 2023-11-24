@@ -21,10 +21,12 @@ jobs:
           docker build -t maven - <<EOF
           FROM maven:3.8.4-openjdk-17
           WORKDIR /tmp
-          COPY /home/runner/work/Alex-Krylov/Alex-Krylov /tmp
-          RUN ls /tmp
+          # Adjust the path to copy the necessary content
+          COPY . /tmp/Alex-Krylov
+          RUN ls /tmp/Alex-Krylov
           RUN pwd && ls
-          RUN /tmp/mvnw package && /tmp/mvnw test
+          RUN /tmp/Alex-Krylov/mvnw package && /tmp/Alex-Krylov/mvnw test
           EOF
+
 
          
