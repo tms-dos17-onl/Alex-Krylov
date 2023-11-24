@@ -12,8 +12,8 @@ jobs:
     steps:
        - name: Use 
          run :  |
-            apt install openjdk-17-jdk openjdk-17-jre
-            apt install maven
+            apt-get update
+            apt-get install -y openjdk-17-jdk openjdk-17-jre maven
 
         
        - name: Use 
