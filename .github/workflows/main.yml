@@ -7,9 +7,9 @@ on:
 
 jobs:
   my_test:
-    runs-on: maven:3.8.3-openjdk-17
+    runs-on: ubuntu-latest
     container:
-      image: openjdk:17
+      image: maven:3.8.3-openjdk-17
       options: --privileged  # Добавляем привилегии для работы с Docker
 
     steps:
