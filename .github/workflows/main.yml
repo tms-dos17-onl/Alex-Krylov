@@ -24,7 +24,7 @@ jobs:
       
      - name: Build
        run: |
-          mvn -version
+         
           ls -la
           cd spring-petclinic
           ./mvnw -B package
