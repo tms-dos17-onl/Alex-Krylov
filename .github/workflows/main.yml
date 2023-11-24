@@ -19,7 +19,7 @@ jobs:
           docker build -t maven - <<EOF
           FROM maven:3.8.4-openjdk-17
           WORKDIR /tmp
-          COPY . /tmp
+          COPY /home/runner/work/Alex-Krylov/Alex-Krylov /tmp
           RUN ls /tmp
           RUN pwd && ls
           RUN /tmp/mvnw package && /tmp/mvnw test
