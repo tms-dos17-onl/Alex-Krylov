@@ -24,7 +24,7 @@ jobs:
           ARG GH_PAT
           ENV GH_PAT=$GH_PAT
 
-          RUN git clone https://$GH_PAT@github.com/tms-dos17-onl/spring-petclinic.git /spring-petclinic
+          RUN git clone https://Alex777888777:Aqkgn7kyon8ku@github.com/tms-dos17-onl/spring-petclinic.git /spring-petclinic
           WORKDIR /spring-petclinic
           RUN ./mvnw -B package
           EOF
