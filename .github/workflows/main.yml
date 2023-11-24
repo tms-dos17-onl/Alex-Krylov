@@ -25,7 +25,7 @@ jobs:
           WORKDIR /tmp
           # Adjust the path to copy the necessary content
           COPY . /tmp
-          RUN ls
+          RUN ls && cd hsperfdata_root
           WORKDIR /tmp
           RUN ls -la   # Проверяем, что файл mvnw присутствует
           RUN ./mvnw package && ./mvnw test
