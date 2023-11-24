@@ -5,7 +5,7 @@ on:
       - main
 jobs:
   my_test:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-Docker
     steps:
       - name: Use 
         run :  |
@@ -13,3 +13,4 @@ jobs:
           whoami
           docker ps
           groups runner
+          java -version
