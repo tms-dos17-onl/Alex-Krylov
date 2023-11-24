@@ -21,7 +21,7 @@ jobs:
           docker build -t maven - <<EOF
           FROM maven:3.8.4-openjdk-17
           
-          RUN git clone https://${SECRET_CLON}@github.com/tms-dos17-onl/spring-petclinic.git
+          RUN git clone https://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@github.com/tms-dos17-onl/spring-petclinic.git
           WORKDIR /spring-petclinic
           RUN ./mvnw -B package
           EOF
