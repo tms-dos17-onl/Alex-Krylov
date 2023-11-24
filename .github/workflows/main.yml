@@ -23,6 +23,7 @@ jobs:
           
           ls -la
           cd spring-petclinic
+          unset MAVEN_CONFIG
           ./mvnw clean package
           
 
