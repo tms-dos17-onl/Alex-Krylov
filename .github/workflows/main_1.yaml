@@ -1,26 +1,34 @@
 name: My_pipeline
+
 on:
   push:
     branches:
       - main
+
 jobs:
   my_test:
     runs-on: ubuntu-latest
     container:
       image: ubuntu:latest
-    steps:
-    
 
-    - name: Check out my other private repo
-      uses: actions/checkout@v2
-      with:
-        repository: tms-dos17-onl/spring-petclinic
-        token: ${{ secrets.SECRET_CLON }}
-        fetch-depth: 0  
-    - name: Build with Maven
-      run: |
-        apt install openjdk-17-jdk openjdk-17-jre maven
-       
-        mvn -version
-        java -version
-        ls -la
+    steps:
+      - name: Check out my other private repo
+        uses: actions/checkout@v2
+        with:
+          repository: tms-dos17-onl/spring-petclinic
+          token: ${{ secrets.SECRET_CLON }}
+          fetch-depth: 0  
+
+      - name: Install Java and Maven
+        run: |
+          apt-get update
+          apt-get install -y openjdk-17-jdk openjdk-17-jre maven
+
+      - name: Check Java and Maven versions
+        run: |
+          java -version
+          mvn -version
+
+      - name: List directory contents
+        run: ls -la
+
