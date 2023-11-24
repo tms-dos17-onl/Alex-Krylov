@@ -1,23 +1,29 @@
-name: My_pipeline2
+name: My_pipeline
 on:
   push:
     branches:
       - main
 jobs:
   my_test:
-    runs-on: ubuntu-latest
-    container:
-      image: docker:latest
-
+    runs-on: macos-latest
+    
     steps:
-       - name: Use Java 17
-         uses: actions/setup-java@v2
-         with:
-          java-version: '17'
-          distribution: 'adopt'
-     
-       - name: Use 
-         run :  |
-          docker version
-          whoami
-          java -version
+      - name: Clone repository
+        env:
+          SECRET_CLON: ${{ secrets.SECRET_CLON }}
+        run: |
+          git config --global credential.helper store
+          git clone https://${SECRET_CLON}@github.com/tms-dos17-onl/spring-petclinic.git
+
+      - name: Install Java 17
+        run: |
+          brew install openjdk@17
+
+      - name: Check Java version
+        run: java -version
+
+      - name: Build
+        run: |
+          ls -la
+          cd spring-petclinic
+          ./mvnw -B package
