@@ -1,29 +1,33 @@
-name: My_pipeline
+name: Pipeline
+
 on:
   push:
     branches:
       - main
+
 jobs:
-  my_test:
+  docker_build:
     runs-on: ubuntu-latest
-    container:
-      image: maven:3.8.3-openjdk-17
+    
     steps:
-     
-      
-      - name: Check out my other private repo
+      - name: Checkout code
         uses: actions/checkout@v2
-        with:
-         repository: tms-dos17-onl/spring-petclinic
-         token: ${{ secrets.SECRET_CLON }}
-         fetch-depth: 0  
-      
-      - name: Build
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+
+      - name: Build Docker 
         run: |
-          
-          ls -la
-          
-          unset MAVEN_CONFIG
-          ./mvnw clean package
-          
+          docker build -t maven - <<EOF
+          FROM maven:3.8.4-openjdk-17
+          RUN apt-get update && apt-get install -y git
+          RUN git clone https://${SECRET_CLON}@github.com/tms-dos17-onl/spring-petclinic.git
+          WORKDIR /spring-petclinic
+          RUN ./mvnw -B package
+          EOF
+        
+      - name: Run Maven build inside Docker container
+        run: |
+          docker run -it --rm maven mvn clean install
+
 
