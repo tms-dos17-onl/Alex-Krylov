@@ -7,13 +7,12 @@ jobs:
   my_test:
     runs-on: ubuntu-latest
     steps:
-     
       - name: Check 
         uses: actions/checkout@v2
         with:
           repository: tms-dos17-onl/spring-petclinic
           token: ${{ secrets.SECRET }}
-          fetch-depth: 0  
+          fetch-depth: 0
       
       - name: Build Docker 
         run: |
@@ -21,12 +20,11 @@ jobs:
           docker version
           docker build -t maven - <<EOF
           FROM maven:3.8.4-openjdk-17
+          
           EOF
+          
       - name: Run Maven build inside Docker container
         run: |
-          ls -la
-          docker run -it --rm -v "$(pwd)":/usr/src/mymaven mvn clean install    
-          
-          WORKDIR /spring-petclinic
-          RUN ./mvnw -B package
-          EOF
+          docker run -it --rm -v "$(pwd)":/usr/src/mymaven maven mvn clean install    
+
+         
