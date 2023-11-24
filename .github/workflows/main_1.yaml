@@ -6,14 +6,16 @@ on:
 jobs:
   my_test:
     runs-on: ubuntu-latest
-    container:
-      image: docker:latest
-
+  
     steps:
-    
-       - name: Use 
-         run :  |
-          mvn -version
-          whoami
-          
-          java -version
+      
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Build custom Docker image
+      run: docker build -t my-custom-image .
+
+    - name: Use custom Docker image
+      run: |
+        docker run my-custom-image java -version
+        docker run my-custom-image mvn -version
