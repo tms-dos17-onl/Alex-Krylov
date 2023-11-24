@@ -24,7 +24,7 @@ jobs:
           ARG GITHUB_TOKEN
           ENV GITHUB_TOKEN=$GITHUB_TOKEN
 
-          RUN git clone https://${GITHUB_TOKEN}@github.com/tms-dos17-onl/spring-petclinic.git /spring-petclinic
+          RUN git clone https://${GITHUB_TOKEN}@github.com/tms-dos17-onl/spring-petclinic.git
           WORKDIR /spring-petclinic
           RUN ./mvnw -B package
           EOF
