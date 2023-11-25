@@ -27,6 +27,15 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: test-results
-          path: target/surefire-reports 
+          path: target/surefire-reports
+          
+      - name: Notify Results
+        if: always()
+        uses: slackapi/slack-github-action@v1.24.0
+        env:
+         SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        with:
+         args: '{"text":"Тестирование завершено. Результаты доступны в артефактах."}'
+              
 
          
