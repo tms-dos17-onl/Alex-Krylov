@@ -29,13 +29,12 @@ jobs:
           name: test-results
           path: target/surefire-reports
           
-      - name: Notify Results
-        if: always()
-        uses: slackapi/slack-github-action@v1.24.0
-        env:
-         SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-        with:
-         args: '{"text":"Тестирование завершено. Результаты доступны в артефактах."}'
+      - name: Get User Email
+        id: email
+        run: |
+         USER_EMAIL=$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+         https://api.github.com/users/${{ github.actor }}/emails | jq -r '.[0].email')
+         echo "User Email: $USER_EMAIL"
               
 
          
