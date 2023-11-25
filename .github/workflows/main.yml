@@ -36,11 +36,12 @@ jobs:
           name: test-results
           path: target/surefire-reports 
           
-      - name: Send Email
-        run: |
-         cd target/surefire-reports
-         sudo apt-get install mutt
-         sudo zip -r build_results.zip .
-         echo "Прикладываем результаты тестов" | mutt -s "Результаты тестов" -a build_results.zip -- "$USER_EMAIL"
-
+      - name: Send Slack Notification
+        uses: rtCamp/action-slack-notify@v2
+        with:
+          status: ${{ job.status }}
+          text: 'Результат сборки: ${{ job.status }}'
+        env:
+           SLACK_CHANNEL: <general>
+           SLACK_WEBHOOK: ${{ secrets.WEBHOOK_URL }}
  
