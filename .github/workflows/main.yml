@@ -42,6 +42,6 @@ jobs:
           status: ${{ job.status }}
           text: 'Результат сборки: ${{ job.status }}'
         env:
-        
+           SLACK_CHANNEL: <general>
            SLACK_WEBHOOK: ${{ secrets.WEBHOOK_URL }}
  
