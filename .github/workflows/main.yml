@@ -39,6 +39,7 @@ jobs:
       - name: Send Email
         run: |
          cd target/surefire-reports
+         sudo apt-get install mutt
          sudo zip -r build_results.zip .
          echo "Прикладываем результаты тестов" | mutt -s "Результаты тестов" -a build_results.zip -- "$USER_EMAIL"
 
