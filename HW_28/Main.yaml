@@ -36,7 +36,7 @@ jobs:
           name: test-results
           path: target/surefire-reports 
           
-      - name: Send Slack Notification
+      - name: Notification
         uses: rtCamp/action-slack-notify@v2
         with:
           status: ${{ job.status }}
