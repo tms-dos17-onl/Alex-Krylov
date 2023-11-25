@@ -22,7 +22,7 @@ jobs:
           FROM maven:3.8.4-openjdk-17
           ADD . /tmp
           RUN pwd
-          RUN ls && cd /tmp && ls
+          RUN ls && sudo cd /tmp && ls 
           RUN ./mvnw package && ./mvnw test
           EOF
 
