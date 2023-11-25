@@ -36,10 +36,10 @@ jobs:
           name: test-results
           path: target/surefire-reports 
           
-  notification-job:
-    runs-on: ubuntu-latest
-    needs: my_test
-    steps:
-      - name: Notify User
-        run: echo "report will be sent to $USER_EMAIL"
+      - name: Send Email
+        run: |
+         cd target/surefire-reports
+         zip -r build_results.zip .
+         echo "Прикладываем результаты тестов" | mutt -s "Результаты тестов" -a build_results.zip -- "$USER_EMAIL"
+
  
