@@ -17,8 +17,8 @@ jobs:
       - name: Get User Email
         id: email
         run: |
-          USER_EMAIL=$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
-          https://api.github.com/user/emails | jq -r '.[0].email')
+          USER_EMAIL=$(curl -s -H "Authorization: token ${{ secrets.SECRET }}" \
+          https://api.github.com/users/${{ github.actor }}/emails | jq -r '.[0].email')
           echo "User Email: $USER_EMAIL"
       
       - name: Build  
