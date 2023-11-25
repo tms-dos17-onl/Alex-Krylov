@@ -41,5 +41,5 @@ jobs:
     needs: my_test
     steps:
       - name: Notify User
-        run: echo report will be sent to $USER_EMAIL
+        run: echo "report will be sent to $USER_EMAIL"
  
