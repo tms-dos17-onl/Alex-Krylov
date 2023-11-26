@@ -1,5 +1,5 @@
 Хотел бы познокомиться со всеми инструментоми, так как не знаком ни с чем.
-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
+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
 
 FROM maven:3.8.4-openjdk-17
 
