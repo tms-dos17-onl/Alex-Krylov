@@ -10,6 +10,15 @@
 ![image](https://github.com/tms-dos17-onl/Alex-Krylov/assets/139115675/f5b6ee01-985e-4840-8f28-e87ea48853b1)
 
 ---
+![image](https://github.com/tms-dos17-onl/Alex-Krylov/assets/139115675/44ae46e2-b1a1-4ec4-908b-908197e95f98)
+
+---
+![image](https://github.com/tms-dos17-onl/Alex-Krylov/assets/139115675/0d2b50e3-6b12-4193-ac91-e5f236dddea9)
+
+---
+![image](https://github.com/tms-dos17-onl/Alex-Krylov/assets/139115675/03f5643a-7b61-4440-96d2-e1d8a94f16cc)
+
+---
 
 
 
