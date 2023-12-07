@@ -4,4 +4,8 @@
 ![image](https://github.com/tms-dos17-onl/Alex-Krylov/assets/139115675/eef96937-09e4-4912-bacf-e752b6e9509c)
 
 ---
+![image](https://github.com/tms-dos17-onl/Alex-Krylov/assets/139115675/04d4bd5e-9dfd-4869-a23b-7d70b08eeafd)
+
+---
+
 
