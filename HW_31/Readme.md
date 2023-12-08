@@ -62,4 +62,10 @@ gcloud auth activate-service-account krylov-gcs-demo@tidal-mason-406418.iam.gser
 
 ![image](https://github.com/tms-dos17-onl/Alex-Krylov/assets/139115675/c11f4271-281d-46ea-8927-2bec9045ca30)
 
+![image](https://github.com/tms-dos17-onl/Alex-Krylov/assets/139115675/42a39b1f-cd38-4511-9f0c-f3f445ec2b14)
+
+Добавил еще 2 машины
+![image](https://github.com/tms-dos17-onl/Alex-Krylov/assets/139115675/33f84576-868e-4f16-8393-bbcc37bdf33a)
+
+
 
